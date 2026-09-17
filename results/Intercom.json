@@ -1,0 +1,102 @@
+{
+  "app": "Intercom",
+  "category": "Support and Helpdesk",
+  "status": "ok",
+  "report": {
+    "app": "Intercom",
+    "category": "Support and Helpdesk",
+    "description": "Intercom provides a developer platform with REST APIs and SDKs to manage contacts, conversations, tickets, companies, and other support data. It supports both personal access tokens and OAuth for authentication.",
+    "auth_methods": [
+      "access_token",
+      "oauth"
+    ],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "None",
+    "evidence": [
+      {
+        "claim": "Intercom offers Access Token and OAuth authentication options for its API.",
+        "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+        "source_type": "web"
+      },
+      {
+        "claim": "Intercom provides a Managed Cloud Platform (Data Connectors) with its own authentication methods.",
+        "url": "https://www.intercom.com/help/en/articles/6615543-setting-up-data-connectors-authentication",
+        "source_type": "web"
+      },
+      {
+        "claim": "Intercom Developer Platform includes comprehensive REST API documentation covering many resources.",
+        "url": "https://developers.intercom.com/docs/references/rest-api/api.intercom.io",
+        "source_type": "web"
+      },
+      {
+        "claim": "Developers can self‑serve to obtain API credentials via the Intercom Developer Hub.",
+        "url": "https://developers.intercom.com/docs",
+        "source_type": "web"
+      },
+      {
+        "claim": "Intercom API supports managing contacts, conversations, tickets, and companies, indicating broad API coverage.",
+        "url": "https://www.intercom.com/help/en/articles/9071694-intercom-developer-faqs",
+        "source_type": "web"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "Snippets do not address Intercom credential access.",
+          "_evidence": [
+            {
+              "title": "How do I disable the free trial popup?",
+              "url": "https://community.adobe.com/questions-9/how-do-i-disable-the-free-trial-popup-1303510",
+              "snippet": "@DTRFH If the pop-up is asking you to begin a free trial and demands credit card info, it means you haven't activated it yet. You're just seeing a persistent advertisement. If you had started a trial, they would already have your payment information."
+            },
+            {
+              "title": "Crypto API Pricing Plans | CoinGecko",
+              "url": "https://www.coingecko.com/en/api/pricing",
+              "snippet": "Learn\n\n Learn \n\nLearn CryptoResearch InsightsNewsReportsLearn & EarnVideosNewsletterGlossary\n\n Products \n\nCrypto PortfolioCoinGecko AppCoinGecko Premium Free Trial\n\nFor Businesses\n\nAdvertising\n\nFor Developers\n\nCrypto Widget\n\nOn-Chain\n\nGeckoTerminal\n\n"
+            },
+            {
+              "title": "Crypto API Pricing Plans | CoinGecko",
+              "url": "http://www.coingecko.com/en/api/pricing",
+              "snippet": "Learn\n\n Learn \n\nLearn CryptoResearch InsightsNewsReportsLearn & EarnVideosNewsletterGlossary\n\n Products \n\nCrypto PortfolioCoinGecko AppCoinGecko Premium Free Trial\n\nFor Businesses\n\nAdvertising\n\nFor Developers\n\nCrypto Widget\n\nOn-Chain\n\nGeckoTerminal\n\n"
+            }
+          ]
+        },
+        "api_mcp": {
+          "verdict": "confirmed",
+          "reason": "Snippets describe Intercom's MCP server and its API for data access.",
+          "_evidence": [
+            {
+              "title": "GitHub - intercom/intercom-mcp-server: Intercom MCP Server documentation · GitHub",
+              "url": "https://github.com/intercom/intercom-mcp-server",
+              "snippet": "Learn how to use the Model Context Protocol (MCP) to enable AI agents to securely access and interact with your Intercom data whenever helpful.\n\nRegion availability Currently the Intercom MCP server is only supported in US hosted workspaces.\n\n## What"
+            },
+            {
+              "title": "What is Intercom MCP Server?",
+              "url": "https://fin.ai/glossary/intercom-mcp-server",
+              "snippet": "The Intercom MCP Server (Model Context Protocol) allows teams across your organization to securely access customer conversation data directly inside AI tools like ChatGPT. This eliminates the need to switch between platforms and makes valuable custom"
+            },
+            {
+              "title": "Intercom MCP Server Connector for Intercom | Intercom",
+              "url": "https://www.intercom.com/integrations/connectors/intercom-mcp-server",
+              "snippet": "## Overview\n\nIntercom's MCP server lets AI tools and CLIs (like Claude Code, Claude Desktop, ChatGPT, Cursor, and VS Code) securely access your Intercom data through the Model Context Protocol. Query conversations, contacts, companies, and Help Cente"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

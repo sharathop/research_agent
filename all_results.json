@@ -1,0 +1,1888 @@
+[
+  {
+    "app": "Aircall",
+    "category": "Communications and Messaging",
+    "status": "error",
+    "report": null,
+    "needs_human_review": true,
+    "error": "Error code: 400 - {'error': {'message': \"Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.\", 'type': 'invalid_request_error', 'code': 'output_parse_failed', 'failed_generation': ''}}\ncall_with_retry(\n        groq_chat,\n    ...<5 lines>...\n        log=log,\n    )\n  File \"C:\\composio-research-agent\\research_agent_fixed.py\", line 402, in call_with_retry\n    return fn(*args, **kwargs)\n  File \"C:\\composio-research-agent\\research_agent_fixed.py\", line 375, in groq_chat\n    response = groq_client.chat.completions.create(model=model, messages=messages, **kwargs)\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\resources\\chat\\completions.py\", line 466, in create\n    return self._post(\n           ~~~~~~~~~~^\n        \"/openai/v1/chat/completions\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<45 lines>...\n        stream_cls=Stream[ChatCompletionChunk],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\_base_client.py\", line 1284, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\_base_client.py\", line 1071, in request\n    raise self._make_status_error_from_response(err.response) from None\ngroq.BadRequestError: Error code: 400 - {'error': {'message': \"Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.\", 'type': 'invalid_request_error', 'code': 'output_parse_failed', 'failed_generation': ''}}\n"
+  },
+  {
+    "app": "Attio",
+    "category": "CRM and Sales",
+    "status": "ok",
+    "report": {
+      "app": "Attio",
+      "category": "CRM and Sales",
+      "description": "Attio is a modern CRM platform that offers a RESTful API, custom objects, and a Model Context Protocol (MCP) server for AI integration, with tiered pricing that includes API and webhook access.",
+      "auth_methods": [
+        "access_token",
+        "OAuth"
+      ],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "REST"
+        ],
+        "breadth": "broad",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "API access may require an approved developer status or a paid plan tier.",
+      "evidence": [
+        {
+          "claim": "Developers can create a developer account, register an integration, set scopes, and generate an access token to authenticate API calls.",
+          "url": "https://www.stacksync.com/blog/how-to-get-an-attio-developer-account-and-start-working-with-attios-api",
+          "source_type": "web"
+        },
+        {
+          "claim": "Attio provides a REST API covering objects, attributes, and records with extensive documentation.",
+          "url": "https://apitracker.io/a/attio",
+          "source_type": "web"
+        },
+        {
+          "claim": "Attio offers a Model Context Protocol (MCP) server that enables AI tools to securely access the workspace.",
+          "url": "https://reply.io/blog/attio-mcp",
+          "source_type": "web"
+        },
+        {
+          "claim": "The official Attio MCP documentation describes MCP as an open standard for connecting AI assistants to the CRM.",
+          "url": "https://docs.attio.com/mcp/overview",
+          "source_type": "web"
+        },
+        {
+          "claim": "API and webhook access are listed as features on Pro and Enterprise pricing tiers.",
+          "url": "https://attio.com/pricing",
+          "source_type": "web"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Unterminated string starting at: line 4 column 15 (char 72)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Unterminated string starting at: line 4 column 15 (char 72)"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Close",
+    "category": "CRM and Sales",
+    "status": "ok",
+    "report": {
+      "app": "Close",
+      "category": "CRM and Sales",
+      "description": "Close is an inside sales CRM that offers a comprehensive REST API, webhooks, and Model Context Protocol (MCP) integration for managing leads, contacts, activities, tasks, and other sales data.",
+      "auth_methods": [
+        "API Key",
+        "OAuth"
+      ],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "REST",
+          "Webhooks",
+          "MCP"
+        ],
+        "breadth": "broad",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "",
+      "evidence": [
+        {
+          "claim": "API keys can be created and managed by users in their Close account settings",
+          "url": "https://developer.close.com/api/overview/api-key-authentication",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "OAuth authentication is supported for Close API access",
+          "url": "https://developer.close.com/api/overview/oauth-authentication",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Close provides a Model Context Protocol (MCP) server for AI integration",
+          "url": "https://close.com/integrations/close-mcp",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Close offers a full-featured REST API and webhooks for extensive data access and automation",
+          "url": "https://developer.close.com",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "The API documentation describes comprehensive endpoints covering leads, contacts, activities, tasks, and more, indicating broad API coverage",
+          "url": "https://developer.close.com/api/overview",
+          "source_type": "documentation"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Copper",
+    "category": "CRM and Sales",
+    "status": "error",
+    "report": null,
+    "needs_human_review": true,
+    "error": "Error code: 400 - {'error': {'message': 'Model called browser tool which was not enabled for this request', 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '{\"name\": \"browser.open\", \"arguments\": {\"cursor\": 0, \"id\": 2}}'}}\n\n    response = call_with_retry(\n        groq_chat,\n    ...<5 lines>...\n        log=log,\n    )\n  File \"C:\\composio-research-agent\\research_agent_fixed.py\", line 402, in call_with_retry\n    return fn(*args, **kwargs)\n  File \"C:\\composio-research-agent\\research_agent_fixed.py\", line 375, in groq_chat\n    response = groq_client.chat.completions.create(model=model, messages=messages, **kwargs)\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\resources\\chat\\completions.py\", line 466, in create\n    return self._post(\n           ~~~~~~~~~~^\n        \"/openai/v1/chat/completions\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<45 lines>...\n        stream_cls=Stream[ChatCompletionChunk],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\_base_client.py\", line 1284, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\_base_client.py\", line 1071, in request\n    raise self._make_status_error_from_response(err.response) from None\ngroq.BadRequestError: Error code: 400 - {'error': {'message': 'Model called browser tool which was not enabled for this request', 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '{\"name\": \"browser.open\", \"arguments\": {\"cursor\": 0, \"id\": 2}}'}}\n"
+  },
+  {
+    "app": "DealCloud",
+    "category": "CRM and Sales",
+    "status": "ok",
+    "report": {
+      "app": "DealCloud",
+      "category": "CRM and Sales",
+      "description": "DealCloud is a CRM and deal‑management platform for principal investing and M&A advisory professionals. It offers a RESTful API that requires user‑specific credentials (API keys or OAuth tokens) and provides access to functional endpoints, with a new Model Context Protocol (MCP) server for read‑only data access in preview.",
+      "auth_methods": [
+        "API key",
+        "OAuth"
+      ],
+      "credential_access": "admin",
+      "api": {
+        "types": [
+          "REST"
+        ],
+        "breadth": "broad",
+        "mcp": "yes"
+      },
+      "buildability": "constrained",
+      "main_blocker": "The MCP server is only available as a client preview starting July 2026, requires the DealCloud with Celeste license, and currently provides read‑only access, limiting full integration capabilities.",
+      "evidence": [
+        {
+          "claim": "API requires user‑specific credentials and can use a dedicated service account",
+          "url": "https://api.docs.dealcloud.com/guides/making_requests_on_behalf_of_users",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "API keys are used for authentication and must be treated like passwords",
+          "url": "https://api.docs.dealcloud.com/docs/apikeys",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "DealCloud MCP Server announced as a client preview starting July 2026",
+          "url": "https://api.docs.dealcloud.com/mcp",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "MCP preview requires the DealCloud with Celeste license and provides read‑only access",
+          "url": "https://www.usecarly.com/blog/chatgpt-dealcloud-integration",
+          "source_type": "blog"
+        },
+        {
+          "claim": "Developer portal lists API documentation and references REST APIs",
+          "url": "https://api.docs.dealcloud.com",
+          "source_type": "documentation"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Discord",
+    "category": "Communications and Messaging",
+    "status": "error",
+    "report": null,
+    "needs_human_review": true,
+    "error": "Error code: 400 - {'error': {'message': \"Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.\", 'type': 'invalid_request_error', 'code': 'output_parse_failed', 'failed_generation': ''}}\ncall_with_retry(\n        groq_chat,\n    ...<5 lines>...\n        log=log,\n    )\n  File \"C:\\composio-research-agent\\research_agent_fixed.py\", line 402, in call_with_retry\n    return fn(*args, **kwargs)\n  File \"C:\\composio-research-agent\\research_agent_fixed.py\", line 375, in groq_chat\n    response = groq_client.chat.completions.create(model=model, messages=messages, **kwargs)\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\resources\\chat\\completions.py\", line 466, in create\n    return self._post(\n           ~~~~~~~~~~^\n        \"/openai/v1/chat/completions\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<45 lines>...\n        stream_cls=Stream[ChatCompletionChunk],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\_base_client.py\", line 1284, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\_base_client.py\", line 1071, in request\n    raise self._make_status_error_from_response(err.response) from None\ngroq.BadRequestError: Error code: 400 - {'error': {'message': \"Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.\", 'type': 'invalid_request_error', 'code': 'output_parse_failed', 'failed_generation': ''}}\n"
+  },
+  {
+    "app": "Freshdesk",
+    "category": "Support and Helpdesk",
+    "status": "error",
+    "report": null,
+    "needs_human_review": true,
+    "error": "Error code: 400 - {'error': {'message': \"Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.\", 'type': 'invalid_request_error', 'code': 'output_parse_failed', 'failed_generation': ''}}\ncall_with_retry(\n        groq_chat,\n    ...<5 lines>...\n        log=log,\n    )\n  File \"C:\\composio-research-agent\\research_agent_fixed.py\", line 402, in call_with_retry\n    return fn(*args, **kwargs)\n  File \"C:\\composio-research-agent\\research_agent_fixed.py\", line 375, in groq_chat\n    response = groq_client.chat.completions.create(model=model, messages=messages, **kwargs)\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\resources\\chat\\completions.py\", line 466, in create\n    return self._post(\n           ~~~~~~~~~~^\n        \"/openai/v1/chat/completions\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<45 lines>...\n        stream_cls=Stream[ChatCompletionChunk],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\_base_client.py\", line 1284, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\_base_client.py\", line 1071, in request\n    raise self._make_status_error_from_response(err.response) from None\ngroq.BadRequestError: Error code: 400 - {'error': {'message': \"Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.\", 'type': 'invalid_request_error', 'code': 'output_parse_failed', 'failed_generation': ''}}\n"
+  },
+  {
+    "app": "Front",
+    "category": "Support and Helpdesk",
+    "status": "error",
+    "report": null,
+    "needs_human_review": true,
+    "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-20b` in organization `org_01m2nmtwm0ehsrapb01b5s0ff4` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 8062, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}\ny\", line 402, in call_with_retry\n    return fn(*args, **kwargs)\n  File \"C:\\composio-research-agent\\research_agent_fixed.py\", line 375, in groq_chat\n    response = groq_client.chat.completions.create(model=model, messages=messages, **kwargs)\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\resources\\chat\\completions.py\", line 466, in create\n    return self._post(\n           ~~~~~~~~~~^\n        \"/openai/v1/chat/completions\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<45 lines>...\n        stream_cls=Stream[ChatCompletionChunk],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\_base_client.py\", line 1284, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\_base_client.py\", line 1071, in request\n    raise self._make_status_error_from_response(err.response) from None\ngroq.APIStatusError: Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-20b` in organization `org_01m2nmtwm0ehsrapb01b5s0ff4` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 8062, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}\n"
+  },
+  {
+    "app": "Gladly",
+    "category": "Support and Helpdesk",
+    "status": "ok",
+    "report": {
+      "app": "Gladly",
+      "category": "Support and Helpdesk",
+      "description": "Gladly is a customer service platform that offers a publicly documented REST API for customers, conversations, agents, tasks, and knowledge base content. Tokens are generated in account settings and used for HTTP Basic Authentication, with optional OAuth for installable apps.",
+      "auth_methods": [
+        "HTTP Basic Auth",
+        "OAuth"
+      ],
+      "credential_access": "admin",
+      "api": {
+        "types": [
+          "REST",
+          "OpenAPI"
+        ],
+        "breadth": "moderate",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "None",
+      "evidence": [
+        {
+          "claim": "Gladly offers a publicly documented REST API, earning an A on Supergood's API Report Card.",
+          "url": "https://supergood.ai/api-report-card/gladly",
+          "source_type": "API Report Card"
+        },
+        {
+          "claim": "Gladly API is a RESTful service with an OpenAPI specification.",
+          "url": "https://developer.gladly.com/rest",
+          "source_type": "Developer Docs"
+        },
+        {
+          "claim": "API tokens are generated in account settings and used as HTTP Basic Auth passwords, indicating user-level token access.",
+          "url": "https://docs.extract.to/sources/gladly",
+          "source_type": "API Token Guide"
+        },
+        {
+          "claim": "Setting up Gladly integration requires admin access in Gladly.",
+          "url": "https://help.maestroqa.com/en/articles/5546875-gladly-integration",
+          "source_type": "Integration Guide"
+        },
+        {
+          "claim": "Gladly offers SDKs, sample apps, and a testing environment to support integration development.",
+          "url": "https://www.gladly.ai/gladly-developer-platform",
+          "source_type": "Developer Platform"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Unterminated string starting at: line 1 column 57 (char 56)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Unterminated string starting at: line 1 column 57 (char 56)"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "GoHighLevel",
+    "category": "Marketing, Ads, Email and Social",
+    "status": "ok",
+    "report": {
+      "app": "GoHighLevel",
+      "category": "Marketing, Ads, Email and Social",
+      "description": "",
+      "auth_methods": [],
+      "credential_access": "unknown",
+      "api": {
+        "types": [],
+        "breadth": "unknown",
+        "mcp": "unknown"
+      },
+      "buildability": "unclear",
+      "main_blocker": "Unclear API access or buildability",
+      "evidence": [
+        {
+          "claim": "No publicly documented credential access method found",
+          "url": "https://support.google.com/business/thread/349166900/several-business-profiles-managed-through-gohighlevel-tracking-were-suspended-after-posting-ser?hl=en",
+          "source_type": "forum"
+        },
+        {
+          "claim": "No API documentation or example usage found",
+          "url": "https://www.youtube.com/watch?v=jdX_CrrA2qM",
+          "source_type": "video"
+        },
+        {
+          "claim": "No clear information on buildability or developer resources",
+          "url": "https://rocketreach.co/gohighlevel-profile_b45b2d5efc5a8495",
+          "source_type": "profile"
+        }
+      ],
+      "confidence": "low",
+      "verification": {
+        "first_pass_confidence": "low",
+        "after_verification_confidence": "low",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "original claim was already unknown"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "original claim was already unknown"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Google Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "status": "ok",
+    "report": {
+      "app": "Google Ads",
+      "category": "Marketing, Ads, Email and Social",
+      "description": "Google Ads API allows developers to programmatically manage Google Ads accounts, retrieve reports, and perform ad operations. It uses OAuth 2.0 for authentication and offers both REST and gRPC interfaces.",
+      "auth_methods": [
+        "OAuth 2.0",
+        "Service Account"
+      ],
+      "credential_access": "admin",
+      "api": {
+        "types": [
+          "REST",
+          "gRPC"
+        ],
+        "breadth": "broad",
+        "mcp": "no"
+      },
+      "buildability": "ready",
+      "main_blocker": "None",
+      "evidence": [
+        {
+          "claim": "Google Ads API requires OAuth 2.0 for authentication.",
+          "url": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+          "source_type": "web"
+        },
+        {
+          "claim": "OAuth 2.0 flow uses client_id and client_secret for user authorization.",
+          "url": "https://vishalzambre.com/tech/2025/07/16/google-ads-api-client-secret-refresh-token.html",
+          "source_type": "web"
+        },
+        {
+          "claim": "Google Ads API can be accessed via Service Account flow for Google Workspace.",
+          "url": "https://github.com/google/ads-api-report-fetcher/blob/main/docs/how-to-authenticate-ads-api.md",
+          "source_type": "github"
+        },
+        {
+          "claim": "Google Ads API provides broad coverage of campaign types including Performance Max, Demand Gen, Search, and Shopping.",
+          "url": "https://developers.google.com/google-ads/api",
+          "source_type": "web"
+        },
+        {
+          "claim": "Google Ads API offers both REST and gRPC interfaces.",
+          "url": "https://developers.google.com/google-ads/api",
+          "source_type": "web"
+        }
+      ],
+      "confidence": "low",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "low",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "Evidence does not mention Google Ads admin credentials.",
+            "_evidence": [
+              {
+                "title": "Gemini Developer API pricing",
+                "url": "https://ai.google.dev/gemini-api/docs/pricing",
+                "snippet": "| Grounding with Google Search | Free of charge, up to 500 RPD (limit shared with Flash RPD) | 1,500 RPD (free, limit shared with Flash RPD), then $35 / 1,000 grounded prompts |\n| Grounding with Google Maps | 500 RPD | 1,500 RPD (free), then $25 / 1,"
+              },
+              {
+                "title": "Google AI Studio Pricing (2026): Free, Paid Plans & Gemini ...",
+                "url": "https://www.nocode.mba/articles/google-ai-studio-pricing",
+                "snippet": "The key insight: Google AI Studio includes a Free plan, while AI Pro and AI Ultra plans can provide higher access and limits. Gemini Developer API billing is separate: free usage is quota-limited and paid tiers add production features. It's the Gemin"
+              },
+              {
+                "title": "What Are The Pricing Plans, And Do You Offer A Free Trial? - ClickPatrol™",
+                "url": "https://clickpatrol.com/knowledge-base/what-are-the-pricing-plans-and-do-you-offer-a-free-trial",
+                "snippet": "Stop rivals draining your budget.\n  + Sophisticated fraud icon Sophisticated Fraud\n\n    Catch SIVT that native filters miss.\n  + Click farms icon Click Farms\n\n    Stop coordinated low-quality click operations.\n  + Invalid traffic icon Invalid Traffic"
+              }
+            ]
+          },
+          "api_mcp": {
+            "verdict": "contradicted",
+            "reason": "Evidence confirms Google Ads has an MCP server.",
+            "_evidence": [
+              {
+                "title": "Google Ads MCP: Data Access & Management Tool",
+                "url": "https://mcpmarket.com/server/google-ads-1",
+                "snippet": "This Model Context Protocol (MCP) server facilitates access to Google Ads data via Claude Desktop, enabling users to manage campaigns, accounts, and performance metrics. It features API endpoints for budget, keyword, and ad group management, along wi"
+              },
+              {
+                "title": "Google Ads MCP server: Developer integration guide",
+                "url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+                "snippet": "# Google Ads MCP server: Developer integration guide Stay organized with collections Save and categorize content based on your preferences.\n\n   \n\nThe Model Context Protocol (MCP) is an open standard that enables Large Language Models (LLMs) to secure"
+              },
+              {
+                "title": "Google Ads Model Context Protocol (MCP Server): What Is MCP and How It Transforms Analytics",
+                "url": "https://analytics-tips.com/en/why-and-how-google-ads-mcp-is-changing-the-approach-to-ad-campaign-analytics",
+                "snippet": "## What is Model Context Protocol?\n\nI’ve already written in more detail on the blog about what Model Context Protocol is and why it represents the future of analytics, so here I’ll just give a brief explanation.\n\nModel Context Protocol (MCP) is a pro"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "needs_human_review": true,
+    "error": null
+  },
+  {
+    "app": "Gorgias",
+    "category": "Support and Helpdesk",
+    "status": "ok",
+    "report": {
+      "app": "Gorgias",
+      "category": "Support and Helpdesk",
+      "description": "Customer support and helpdesk platform that provides a RESTful API for managing tickets, customers, messages, and related resources.",
+      "auth_methods": [
+        "API Key",
+        "OAuth 2.0"
+      ],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "REST"
+        ],
+        "breadth": "broad",
+        "mcp": "unknown"
+      },
+      "buildability": "ready",
+      "main_blocker": "unknown",
+      "evidence": [
+        {
+          "claim": "Credentials can be self-generated in the user settings.",
+          "url": "https://docs.gorgias.com/en-US/articles/developer-resources-18370",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "API provides comprehensive coverage of tickets, customers, messages, and more via a REST interface.",
+          "url": "https://apis.io/apis/gorgias/gorgias-tags-api",
+          "source_type": "api_spec"
+        },
+        {
+          "claim": "Developer guide indicates the use of Gorgias API V2 for support automation.",
+          "url": "https://www.eesel.ai/blog/gorgias-api-v2",
+          "source_type": "blog"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "snippets mention plans and developer registration but do not explicitly state that credential access is self‑serve.",
+            "_evidence": [
+              {
+                "title": "How to Choose the Best Gorgias Plan For You",
+                "url": "https://www.gorgias.com/blog/gorgias-plan",
+                "snippet": "TL;DR:\n\n Gorgias offers five main plans: Starter ($10 USD/month), Basic ($60/month), Pro ($360/month), Advanced ($900/month), and Enterprise (custom quote)\n Pricing is based on billable tickets with monthly allotments ranging from 50 to 5,000 tickets"
+              },
+              {
+                "title": "Gorgias Pricing 2026: Plans, AI Agent Costs, and the Ticket Meter | Drag Blog",
+                "url": "https://www.dragapp.com/blog/gorgias-pricing",
+                "snippet": "Gorgias→Drag\n\nWeighing up Gorgias? Drag starts at $12 a seat.In Gmail or as a standalone app\n\nStart free trial\n\nGorgias pricing vs Drag: the full range\n\nEach bar runs from the vendor’s cheapest published plan to its most expensive.A striped tail mean"
+              },
+              {
+                "title": "1. Register on Developer Portal & Get Gorgias Sandbox Account",
+                "url": "https://developers.gorgias.com/docs/1-register-on-developer-portal",
+                "snippet": "Register on our Developer Portal;\n Once you register, feel free to create a trial account and reach out to (/cdn-cgi/l/email-protection#097d6c6a6179687b7d676c7b7a496e667b6e60687a276a6664) to transform it into a developer account.\n  + ⚠️ You will need"
+              }
+            ]
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "original claim was already unknown"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Help Scout",
+    "category": "Support and Helpdesk",
+    "status": "error",
+    "report": null,
+    "needs_human_review": true,
+    "error": "Error code: 400 - {'error': {'message': \"Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.\", 'type': 'invalid_request_error', 'code': 'output_parse_failed', 'failed_generation': ''}}\ncall_with_retry(\n        groq_chat,\n    ...<5 lines>...\n        log=log,\n    )\n  File \"C:\\composio-research-agent\\research_agent_fixed.py\", line 402, in call_with_retry\n    return fn(*args, **kwargs)\n  File \"C:\\composio-research-agent\\research_agent_fixed.py\", line 375, in groq_chat\n    response = groq_client.chat.completions.create(model=model, messages=messages, **kwargs)\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\resources\\chat\\completions.py\", line 466, in create\n    return self._post(\n           ~~~~~~~~~~^\n        \"/openai/v1/chat/completions\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<45 lines>...\n        stream_cls=Stream[ChatCompletionChunk],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\_base_client.py\", line 1284, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\_base_client.py\", line 1071, in request\n    raise self._make_status_error_from_response(err.response) from None\ngroq.BadRequestError: Error code: 400 - {'error': {'message': \"Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.\", 'type': 'invalid_request_error', 'code': 'output_parse_failed', 'failed_generation': ''}}\n"
+  },
+  {
+    "app": "HubSpot",
+    "category": "CRM and Sales",
+    "status": "ok",
+    "report": {
+      "app": "HubSpot",
+      "category": "CRM and Sales",
+      "description": "HubSpot offers a comprehensive set of REST APIs for managing CRM data such as contacts, properties, and search, enabling read and write operations across the platform.",
+      "auth_methods": [
+        "OAuth",
+        "Private App Token"
+      ],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "CRM",
+          "Search",
+          "Properties"
+        ],
+        "breadth": "broad",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "",
+      "evidence": [
+        {
+          "claim": "Private apps can be created by users to obtain access tokens for API calls.",
+          "url": "https://www.youtube.com/watch?v=tvjnPtETEZI",
+          "source_type": "video"
+        },
+        {
+          "claim": "HubSpot provides a Model Context Protocol (MCP) server for AI integration.",
+          "url": "https://developers.hubspot.com/ai-tools/mcp",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Developers can set up the MCP server via the HubSpot CLI, enabling AI assistants to interact with HubSpot data.",
+          "url": "https://developers.hubspot.com/docs/developer-tooling/local-development/developer-mcp/setup",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "HubSpot supports OAuth Bearer token authentication for API access.",
+          "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "HubSpot offers extensive CRM APIs covering contacts, companies, deals, and more.",
+          "url": "https://generect.com/blog/hubspot-api",
+          "source_type": "blog"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Intercom",
+    "category": "Support and Helpdesk",
+    "status": "ok",
+    "report": {
+      "app": "Intercom",
+      "category": "Support and Helpdesk",
+      "description": "Intercom provides a developer platform with REST APIs and SDKs to manage contacts, conversations, tickets, companies, and other support data. It supports both personal access tokens and OAuth for authentication.",
+      "auth_methods": [
+        "access_token",
+        "oauth"
+      ],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "REST"
+        ],
+        "breadth": "broad",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "None",
+      "evidence": [
+        {
+          "claim": "Intercom offers Access Token and OAuth authentication options for its API.",
+          "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+          "source_type": "web"
+        },
+        {
+          "claim": "Intercom provides a Managed Cloud Platform (Data Connectors) with its own authentication methods.",
+          "url": "https://www.intercom.com/help/en/articles/6615543-setting-up-data-connectors-authentication",
+          "source_type": "web"
+        },
+        {
+          "claim": "Intercom Developer Platform includes comprehensive REST API documentation covering many resources.",
+          "url": "https://developers.intercom.com/docs/references/rest-api/api.intercom.io",
+          "source_type": "web"
+        },
+        {
+          "claim": "Developers can self‑serve to obtain API credentials via the Intercom Developer Hub.",
+          "url": "https://developers.intercom.com/docs",
+          "source_type": "web"
+        },
+        {
+          "claim": "Intercom API supports managing contacts, conversations, tickets, and companies, indicating broad API coverage.",
+          "url": "https://www.intercom.com/help/en/articles/9071694-intercom-developer-faqs",
+          "source_type": "web"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "Snippets do not address Intercom credential access.",
+            "_evidence": [
+              {
+                "title": "How do I disable the free trial popup?",
+                "url": "https://community.adobe.com/questions-9/how-do-i-disable-the-free-trial-popup-1303510",
+                "snippet": "@DTRFH If the pop-up is asking you to begin a free trial and demands credit card info, it means you haven't activated it yet. You're just seeing a persistent advertisement. If you had started a trial, they would already have your payment information."
+              },
+              {
+                "title": "Crypto API Pricing Plans | CoinGecko",
+                "url": "https://www.coingecko.com/en/api/pricing",
+                "snippet": "Learn\n\n Learn \n\nLearn CryptoResearch InsightsNewsReportsLearn & EarnVideosNewsletterGlossary\n\n Products \n\nCrypto PortfolioCoinGecko AppCoinGecko Premium Free Trial\n\nFor Businesses\n\nAdvertising\n\nFor Developers\n\nCrypto Widget\n\nOn-Chain\n\nGeckoTerminal\n\n"
+              },
+              {
+                "title": "Crypto API Pricing Plans | CoinGecko",
+                "url": "http://www.coingecko.com/en/api/pricing",
+                "snippet": "Learn\n\n Learn \n\nLearn CryptoResearch InsightsNewsReportsLearn & EarnVideosNewsletterGlossary\n\n Products \n\nCrypto PortfolioCoinGecko AppCoinGecko Premium Free Trial\n\nFor Businesses\n\nAdvertising\n\nFor Developers\n\nCrypto Widget\n\nOn-Chain\n\nGeckoTerminal\n\n"
+              }
+            ]
+          },
+          "api_mcp": {
+            "verdict": "confirmed",
+            "reason": "Snippets describe Intercom's MCP server and its API for data access.",
+            "_evidence": [
+              {
+                "title": "GitHub - intercom/intercom-mcp-server: Intercom MCP Server documentation · GitHub",
+                "url": "https://github.com/intercom/intercom-mcp-server",
+                "snippet": "Learn how to use the Model Context Protocol (MCP) to enable AI agents to securely access and interact with your Intercom data whenever helpful.\n\nRegion availability Currently the Intercom MCP server is only supported in US hosted workspaces.\n\n## What"
+              },
+              {
+                "title": "What is Intercom MCP Server?",
+                "url": "https://fin.ai/glossary/intercom-mcp-server",
+                "snippet": "The Intercom MCP Server (Model Context Protocol) allows teams across your organization to securely access customer conversation data directly inside AI tools like ChatGPT. This eliminates the need to switch between platforms and makes valuable custom"
+              },
+              {
+                "title": "Intercom MCP Server Connector for Intercom | Intercom",
+                "url": "https://www.intercom.com/integrations/connectors/intercom-mcp-server",
+                "snippet": "## Overview\n\nIntercom's MCP server lets AI tools and CLIs (like Claude Code, Claude Desktop, ChatGPT, Cursor, and VS Code) securely access your Intercom data through the Model Context Protocol. Query conversations, contacts, companies, and Help Cente"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Lark (Larksuite)",
+    "category": "Communications and Messaging",
+    "status": "ok",
+    "report": {
+      "app": "Lark (Larksuite)",
+      "category": "Communications and Messaging",
+      "description": "A cloud-based collaboration suite offering messaging, file storage, document editing, and integration with web and native applications.",
+      "auth_methods": [
+        "user_access_token",
+        "tenant_access_token"
+      ],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "messaging",
+          "documents",
+          "collaboration"
+        ],
+        "breadth": "broad",
+        "mcp": "unknown"
+      },
+      "buildability": "ready",
+      "main_blocker": "",
+      "evidence": [
+        {
+          "claim": "Lark issues user and tenant access tokens for API authentication.",
+          "url": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/bitable/notification",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Lark provides more than 2,500 APIs for developers.",
+          "url": "https://open.larksuite.com",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Lark Developer portal enables app registration and documentation access.",
+          "url": "https://open.larksuite.com",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Lark APIs cover messaging and collaboration features such as chat, file sharing, and document editing.",
+          "url": "https://www.larksuite.com/hc/en-US/articles/831091963734-overview-of-lark-developer",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Lark supports web applications using native H5 and gadgets via Lark DSL.",
+          "url": "https://www.larksuite.com/hc/en-US/articles/831091963734-overview-of-lark-developer",
+          "source_type": "documentation"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Unterminated string starting at: line 1 column 122 (char 121)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "original claim was already unknown"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "LiveAgent",
+    "category": "Support and Helpdesk",
+    "status": "ok",
+    "report": {
+      "app": "LiveAgent",
+      "category": "Support and Helpdesk",
+      "description": "LiveAgent is a cloud‑based help desk and live chat solution that provides a REST API for integrating ticketing, chat, and other customer support functions.",
+      "auth_methods": [
+        "API key"
+      ],
+      "credential_access": "trial",
+      "api": {
+        "types": [
+          "REST"
+        ],
+        "breadth": "moderate",
+        "mcp": "unknown"
+      },
+      "buildability": "ready",
+      "main_blocker": "",
+      "evidence": [
+        {
+          "claim": "The LiveAgent API uses API key-based authentication for all endpoints.",
+          "url": "https://support.liveagent.com/741982-API-key",
+          "source_type": "website"
+        },
+        {
+          "claim": "REST API documentation is available for both v1 and v3, showing endpoints and usage guidelines.",
+          "url": "https://support.liveagent.com/802463-REST-API",
+          "source_type": "website"
+        },
+        {
+          "claim": "Truto integration demonstrates that third‑party apps can securely obtain LiveAgent API keys via a managed auth flow.",
+          "url": "https://truto.one/integrations/detail/liveagent",
+          "source_type": "website"
+        },
+        {
+          "claim": "API access is included in all LiveAgent subscription plans and is available during the 30‑day free trial.",
+          "url": "https://www.liveagent.com/pricing",
+          "source_type": "website"
+        },
+        {
+          "claim": "The LiveAgent v3 documentation outlines the REST API endpoints and authentication details.",
+          "url": "https://support.liveagent.com/911737-API-v3",
+          "source_type": "website"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "original claim was already unknown"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Meta Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "status": "ok",
+    "report": {
+      "app": "Meta Ads",
+      "category": "Marketing, Ads, Email and Social",
+      "description": "",
+      "auth_methods": [
+        "OAuth 2.0"
+      ],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "Graph API",
+          "Marketing API"
+        ],
+        "breadth": "broad",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "none",
+      "evidence": [
+        {
+          "claim": "The Meta Ads API can be accessed via OAuth 2.0 and supports no-code integration, indicating self‑serve credential access.",
+          "url": "https://windsor.ai/guide-to-facebook-meta-ads-api",
+          "source_type": "web"
+        },
+        {
+          "claim": "The API requires app‑level permissions such as ads_management and ads_read, confirming self‑serve access and broad API types.",
+          "url": "https://admanage.ai/blog/meta-ads-api",
+          "source_type": "web"
+        },
+        {
+          "claim": "Meta’s Marketing API is a collection of Graph API endpoints for advertising across Meta platforms, supporting a wide breadth of features.",
+          "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api",
+          "source_type": "web"
+        },
+        {
+          "claim": "Third‑party platforms typically use per‑seat or flat monthly fees, indicating that credential access is available via self‑serve app registration.",
+          "url": "https://www.adstellar.ai/blog/meta-ads-api-integration-pricing",
+          "source_type": "web"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Pipedrive",
+    "category": "CRM and Sales",
+    "status": "ok",
+    "report": {
+      "app": "Pipedrive",
+      "category": "CRM and Sales",
+      "description": "Pipedrive provides a RESTful CRM API with both OAuth 2.0 and personal API token authentication, supporting full read/write access to deals, leads, persons, organizations, and other resources across all pricing tiers. It also offers a native Model Context Protocol (MCP) for LLM integration.",
+      "auth_methods": [
+        "OAuth 2.0",
+        "API token"
+      ],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "REST"
+        ],
+        "breadth": "broad",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "",
+      "evidence": [
+        {
+          "claim": "API credentials (personal API key) can be obtained by users themselves via the UI",
+          "url": "https://support.pipedrive.com/en/article/how-can-i-find-my-personal-api-key",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "OAuth 2.0 is the primary auth flow for building apps and accessing the API",
+          "url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Pipedrive offers a native Model Context Protocol (MCP) for secure AI assistant integration",
+          "url": "https://support.pipedrive.com/en/article/mcp",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "API access is available on every plan, providing a comprehensive REST surface",
+          "url": "https://pipeline.zoominfo.com/sales/pipedrive-api",
+          "source_type": "analysis"
+        },
+        {
+          "claim": "Comprehensive API documentation and stable endpoints make building integrations straightforward",
+          "url": "https://pipedrive.readme.io/docs/pipedrive-api-v2",
+          "source_type": "documentation"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "Snippets do not mention Pipedrive credential access or self‑serve capabilities.",
+            "_evidence": [
+              {
+                "title": "Crypto API Pricing Plans | CoinGecko",
+                "url": "https://www.coingecko.com/en/api/pricing",
+                "snippet": "Learn\n\n Learn \n\nLearn CryptoResearch InsightsNewsReportsLearn & EarnVideosNewsletterGlossary\n\n Products \n\nCrypto PortfolioCoinGecko AppCoinGecko Premium Free Trial\n\nFor Businesses\n\nAdvertising\n\nFor Developers\n\nCrypto Widget\n\nOn-Chain\n\nGeckoTerminal\n\n"
+              },
+              {
+                "title": "Crypto API Pricing Plans | CoinGecko",
+                "url": "http://www.coingecko.com/en/api/pricing",
+                "snippet": "Learn\n\n Learn \n\nLearn CryptoResearch InsightsNewsReportsLearn & EarnVideosNewsletterGlossary\n\n Products \n\nCrypto PortfolioCoinGecko AppCoinGecko Premium Free Trial\n\nFor Businesses\n\nAdvertising\n\nFor Developers\n\nCrypto Widget\n\nOn-Chain\n\nGeckoTerminal\n\n"
+              },
+              {
+                "title": "r/developer",
+                "url": "https://www.reddit.com/r/developer",
+                "snippet": "By continuing, you agree to our User Agreement and acknowledge that you understand the Privacy Policy.\n\nImage 4 [...] u/RedEagle_MGN\n\n•1 mo. agoAs a mod, I would love to get to know the community more, what got you into development?QuestionAs a mod, "
+              }
+            ]
+          },
+          "api_mcp": {
+            "verdict": "confirmed",
+            "reason": "Multiple snippets describe Pipedrive's official Model Context Protocol (MCP) server.",
+            "_evidence": [
+              {
+                "title": "What Is Pipedrive MCP? The Complete 2026 Guide",
+                "url": "https://tldv.io/blog/pipedrive-mcp",
+                "snippet": "Table of Contents\n\nPipedrive MCP is Pipedrive’s official Model Context Protocol server: a secure bridge that lets AI assistants like Claude and ChatGPT query and update your CRM in natural language. Pipedrive launched this official version on June 30"
+              },
+              {
+                "title": "Native Model Context Protocol (MCP) from Pipedrive",
+                "url": "https://support.pipedrive.com/en/article/mcp",
+                "snippet": "A model context protocol, or MCP, is an open standard that allows large language models (LLMs) and AI assistants to securely interact with structured data and external services. [...] Pipedrive’s native MCP makes it easier for AI assistants to secure"
+              },
+              {
+                "title": "Pipedrive MCP Server",
+                "url": "https://mcp.so/servers/pipedrive-mcp-server",
+                "snippet": "No tools detected\n\nFetch the live tool list by running this server in a temporary sandbox using the button above.\n\n## Overview\n\n## What is Pipedrive MCP Server?\n\nA Model Context Protocol (MCP) server that connects to Pipedrive CRM using the official "
+              }
+            ]
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Plain",
+    "category": "Support and Helpdesk",
+    "status": "ok",
+    "report": {
+      "app": "Plain",
+      "category": "Support and Helpdesk",
+      "description": "Plain is an AI‑native, API‑first customer support platform for B2B teams, consolidating conversations from email, Slack, Teams, chat, Discord, and in‑app channels into a single thread queue that both humans and AI agents can work from.",
+      "auth_methods": [
+        "api_key"
+      ],
+      "credential_access": "paid",
+      "api": {
+        "types": [
+          "graphql",
+          "rest"
+        ],
+        "breadth": "broad",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "unknown",
+      "evidence": [
+        {
+          "claim": "Plain is an AI‑native support platform with an API that supports rapid integration.",
+          "url": "https://www.plain.com/blog/blog-best-ai-customer-support-platforms-b2b-2025",
+          "source_type": "blog"
+        },
+        {
+          "claim": "Plain emphasizes a fast, code‑free start and extensive API documentation for developers.",
+          "url": "https://www.linkedin.com/company/plainsupport",
+          "source_type": "linkedin"
+        },
+        {
+          "claim": "Plain provides comprehensive documentation outlining API endpoints for customers, threads, and more.",
+          "url": "https://www.plain.com/docs/product/what-is-plain",
+          "source_type": "documentation"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "medium",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting property name enclosed in double quotes: line 7 column 31 (char 215)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting property name enclosed in double quotes: line 7 column 31 (char 215)"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Podio",
+    "category": "CRM and Sales",
+    "status": "ok",
+    "report": {
+      "app": "Podio",
+      "category": "CRM and Sales",
+      "description": "Podio is a collaborative work platform that provides customizable workspaces, apps, and API access for managing items, tasks, and user data.",
+      "auth_methods": [
+        "OAuth2",
+        "App Token",
+        "API Key"
+      ],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "REST"
+        ],
+        "breadth": "broad",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "none",
+      "evidence": [
+        {
+          "claim": "Podio uses OAuth2 and app‑token flows for authentication, and developers can obtain API keys via the developer portal.",
+          "url": "https://developers.podio.com/authentication",
+          "source_type": "webpage"
+        },
+        {
+          "claim": "App authentication flow documentation shows how to programmatically acquire app tokens.",
+          "url": "https://developers.podio.com/authentication/app_auth",
+          "source_type": "webpage"
+        },
+        {
+          "claim": "Free plan provides API access (1,000 calls per day) without contacting sales, indicating self‑serve credential acquisition.",
+          "url": "https://findpmsoftware.com/products/podio/pricing",
+          "source_type": "webpage"
+        },
+        {
+          "claim": "Podio MCP Server enables Model Context Protocol integration for AI assistants.",
+          "url": "https://www.progress.com/podio/documentation/using-podio/podio-mcp-server",
+          "source_type": "webpage"
+        },
+        {
+          "claim": "Comprehensive API reference covering items, applications, users, and more demonstrates broad REST API coverage.",
+          "url": "https://developers.podio.com/doc/items",
+          "source_type": "webpage"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Unterminated string starting at: line 8 column 15 (char 231)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Unterminated string starting at: line 8 column 15 (char 231)"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Pumble",
+    "category": "Communications and Messaging",
+    "status": "ok",
+    "report": {
+      "app": "Pumble",
+      "category": "Communications and Messaging",
+      "description": "A comprehensive team communication and collaboration platform offering messaging, channels, file sharing, and video conferencing with an API that supports automated workflows.",
+      "auth_methods": [],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "public"
+        ],
+        "breadth": "moderate",
+        "mcp": "unknown"
+      },
+      "buildability": "ready",
+      "main_blocker": "",
+      "evidence": [
+        {
+          "claim": "Users can generate their own API keys to authenticate with Pumble",
+          "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Multiple API endpoints are available such as list users, channels, messages, and sending messages",
+          "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Integration with Make.com demonstrates ready-to-use integration patterns for Pumble",
+          "url": "https://apps.make.com/pumble-zqpuu6",
+          "source_type": "app_store"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "No evidence about self-serve credential access is present in the snippets.",
+            "_evidence": [
+              {
+                "title": "Honest Pumble Review: Pros, Cons, Features & Pricing",
+                "url": "https://connecteam.com/reviews/pumble",
+                "snippet": "Verdict: 7.5/10\n\nPumble’s generous free trial and affordable paid tiers appeal to freelancers and small teams on shoestring budgets. Cake.com offers a bundle for $12.99 per user that combines time tracking, communication, and task management tools. H"
+              },
+              {
+                "title": "Pricing - Pumble™",
+                "url": "https://pumble.com/pricing",
+                "snippet": "\"Pumble has greatly improved our communication — it reduced the distance and increased the communication flow.\"\n\n More stories\n\nLog In\n\nDownload Pumble\n\nWatch tour)\n\nBook a demo\n\n# Plans & Pricing\n\nStart using Pumble for free, and upgrade when you ne"
+              },
+              {
+                "title": "Pumble by Maxmel Tech - Apps Documentation - Make",
+                "url": "https://apps.make.com/pumble-zqpuu6",
+                "snippet": "any channel press enter or the send button to complete the action copy the generated api key from the ephemeral message you receive some community developers require an additional specific api key retrieve the required api key from the community deve"
+              }
+            ]
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "original claim was already unknown"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Pylon",
+    "category": "Support and Helpdesk",
+    "status": "ok",
+    "report": {
+      "app": "Pylon",
+      "category": "Support and Helpdesk",
+      "description": "A support and helpdesk platform offering ticketing, knowledge base, and AI-powered agent features with programmatic API access.",
+      "auth_methods": [
+        "bearer_token"
+      ],
+      "credential_access": "contact_sales",
+      "api": {
+        "types": [
+          "rest"
+        ],
+        "breadth": "broad",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "API key access requires contacting support staff for approval",
+      "evidence": [
+        {
+          "claim": "Pylon API uses Bearer token authentication.",
+          "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Obtaining API credentials requires contacting support staff.",
+          "url": "https://getpylon.com/developers",
+          "source_type": "developer hub"
+        },
+        {
+          "claim": "Pylon’s API provides broad access with 50+ MCP‑ready tools.",
+          "url": "https://truto.one/integrations/detail/pylon",
+          "source_type": "integration page"
+        },
+        {
+          "claim": "Pylon’s API documentation is comprehensive and ready for developers.",
+          "url": "https://docs.usepylon.com/pylon-docs/developer/api",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "API supports programmatic read and write of data across knowledge base, ticketing, and other modules.",
+          "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/knowledge-base",
+          "source_type": "API reference"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Salesforce",
+    "category": "CRM and Sales",
+    "status": "ok",
+    "report": {
+      "app": "Salesforce",
+      "category": "CRM and Sales",
+      "description": "Salesforce offers a comprehensive set of cloud CRM APIs (REST, SOAP, GraphQL) accessible via OAuth 2.0 flows and supports the Model Context Protocol through hosted MCP servers. A free Developer Edition provides self‑service access for testing and building integrations.",
+      "auth_methods": [
+        "OAuth 2.0 Client Credentials",
+        "OAuth 2.0 Authorization Code"
+      ],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "REST",
+          "GraphQL",
+          "SOAP"
+        ],
+        "breadth": "broad",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "Requires creation of a Connected App and appropriate OAuth scopes (admin setup).",
+      "evidence": [
+        {
+          "claim": "Free Developer Edition provides self‑service access to Salesforce APIs",
+          "url": "https://s2-labs.com/blog/set-up-free-salesforce-developer-edition-account",
+          "source_type": "web"
+        },
+        {
+          "claim": "OAuth client credentials flow can be used to obtain access tokens for API calls",
+          "url": "https://developer.salesforce.com/blogs/2024/02/invoke-rest-apis-with-the-salesforce-integration-user-and-oauth-client-credentials",
+          "source_type": "web"
+        },
+        {
+          "claim": "Salesforce supports Model Context Protocol via Hosted MCP Servers",
+          "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html",
+          "source_type": "web"
+        },
+        {
+          "claim": "Salesforce APIs include REST and GraphQL endpoints",
+          "url": "https://developer.salesforce.com/docs/platform/graphql/guide/graphql-about.html",
+          "source_type": "web"
+        },
+        {
+          "claim": "Connected apps and OAuth 2.0 are required for API access",
+          "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-oauth-and-connected-apps.html",
+          "source_type": "web"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Unterminated string starting at: line 2 column 59 (char 60)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Unterminated string starting at: line 2 column 59 (char 60)"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Slack",
+    "category": "Communications and Messaging",
+    "status": "ok",
+    "report": {
+      "app": "Slack",
+      "category": "Communications and Messaging",
+      "description": "Slack is a communications and messaging platform that provides a rich set of APIs for building integrations and automations.",
+      "auth_methods": [
+        "OAuth 2.0"
+      ],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "Web API",
+          "Events API"
+        ],
+        "breadth": "broad",
+        "mcp": "unknown"
+      },
+      "buildability": "ready",
+      "main_blocker": "",
+      "evidence": [
+        {
+          "claim": "Slack requires OAuth authentication for app integration.",
+          "url": "https://docs.slack.dev/authentication",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Slack app credentials can be obtained via the Slack developer portal.",
+          "url": "https://docs.n8n.io/integrations/builtin/credentials/slack",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Slack provides a Web API with extensive methods.",
+          "url": "https://docs.slack.dev/apis/web-api",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Slack offers multiple API types including Web API and Events API.",
+          "url": "https://docs.slack.dev/apis",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Slack has a free plan, indicating self-serve credential access.",
+          "url": "https://slack.com/pricing",
+          "source_type": "pricing"
+        }
+      ],
+      "confidence": "low",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "low",
+        "checks": {
+          "credential_access": {
+            "verdict": "contradicted",
+            "reason": "To request a trial you must contact support, not self‑serve.",
+            "_evidence": [
+              {
+                "title": "Try a paid Slack plan for free | Slack",
+                "url": "https://slack.com/help/articles/202878523-Try-a-paid-Slack-plan-for-free",
+                "snippet": "## Request a trial\n\nIf you’re a Workspace Owner or Admin, contact us from the email address you used to sign up for your workspace. Please make sure to include your workspace URL in your request. You won't need to add a credit card to start your tria"
+              },
+              {
+                "title": "Slack Pricing Plans: Find the Right Fit for Your Team",
+                "url": "https://slack.com/pricing",
+                "snippet": "AI search\n\nAI daily recaps\n\nAI file summaries\n\nSAML-based single sign-on\n\nSCIM user management\n\nEMM integration support\n\nNative data loss prevention\n\nRecommended for you\n\nPro\n\nDrive productivity in one place\n\n50% off for 3 months\\\n\n$8.75$4.38USD\n\nper"
+              },
+              {
+                "title": "Free Plan | Pricing",
+                "url": "https://slack.com/pricing/free",
+                "snippet": "We’ve received internationally recognized security certifications for ISO 27001 (information security management system) and ISO 27018 (for protecting personal data in the cloud).\n\nLearn more about: Security | Privacy | GDPR Policy\n\n## You’re in good"
+              }
+            ]
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "original claim was already unknown"
+          }
+        }
+      }
+    },
+    "needs_human_review": true,
+    "error": null
+  },
+  {
+    "app": "Telegram",
+    "category": "Communications and Messaging",
+    "status": "error",
+    "report": null,
+    "needs_human_review": true,
+    "error": "Error code: 400 - {'error': {'message': \"Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.\", 'type': 'invalid_request_error', 'code': 'output_parse_failed', 'failed_generation': ''}}\ncall_with_retry(\n        groq_chat,\n    ...<5 lines>...\n        log=log,\n    )\n  File \"C:\\composio-research-agent\\research_agent_fixed.py\", line 402, in call_with_retry\n    return fn(*args, **kwargs)\n  File \"C:\\composio-research-agent\\research_agent_fixed.py\", line 375, in groq_chat\n    response = groq_client.chat.completions.create(model=model, messages=messages, **kwargs)\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\resources\\chat\\completions.py\", line 466, in create\n    return self._post(\n           ~~~~~~~~~~^\n        \"/openai/v1/chat/completions\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<45 lines>...\n        stream_cls=Stream[ChatCompletionChunk],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\_base_client.py\", line 1284, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\composio-research-agent\\venv\\Lib\\site-packages\\groq\\_base_client.py\", line 1071, in request\n    raise self._make_status_error_from_response(err.response) from None\ngroq.BadRequestError: Error code: 400 - {'error': {'message': \"Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.\", 'type': 'invalid_request_error', 'code': 'output_parse_failed', 'failed_generation': ''}}\n"
+  },
+  {
+    "app": "Twenty",
+    "category": "CRM and Sales",
+    "status": "ok",
+    "report": {
+      "app": "Twenty",
+      "category": "CRM and Sales",
+      "description": "An open‑source CRM platform that provides per‑workspace REST and GraphQL APIs for core and custom objects, supporting CRUD, batch operations, and schema inspection via generated endpoints.",
+      "auth_methods": [
+        "api_key"
+      ],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "REST",
+          "GraphQL"
+        ],
+        "breadth": "broad",
+        "mcp": "unknown"
+      },
+      "buildability": "ready",
+      "main_blocker": "API schema is generated per workspace, so integrations must discover the schema dynamically.",
+      "evidence": [
+        {
+          "claim": "Authentication uses Bearer API keys that can be created by users in the Settings → API & Webhooks page.",
+          "url": "https://docs.twenty.com/developers/extend/api",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "API key creation steps are documented, confirming self‑serve credential generation.",
+          "url": "https://docs.twenty.com/l/es/developers/extend/capabilities/apis",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "The Twenty API provides both REST and GraphQL endpoints for core CRM entities and custom objects.",
+          "url": "https://github.com/twentyhq/twenty/issues/10283",
+          "source_type": "github"
+        },
+        {
+          "claim": "Core API offers CRUD, batch upserts, and metadata management, indicating a broad API surface.",
+          "url": "https://www.taskrhino.ca/blog/twenty-crm-vs-salesforce",
+          "source_type": "article"
+        },
+        {
+          "claim": "Each workspace generates its own schema, requiring dynamic discovery but enabling full CRUD capabilities.",
+          "url": "https://docs.twenty.com/developers/extend/api",
+          "source_type": "documentation"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Unterminated string starting at: line 4 column 15 (char 69)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "original claim was already unknown"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Twilio",
+    "category": "Communications and Messaging",
+    "status": "ok",
+    "report": {
+      "app": "Twilio",
+      "category": "Communications and Messaging",
+      "description": "Cloud-based programmable communications platform providing APIs for voice, SMS, video, and authentication services such as Authy 2FA.",
+      "auth_methods": [
+        "HTTP Basic authentication",
+        "API keys"
+      ],
+      "credential_access": "paid",
+      "api": {
+        "types": [
+          "Voice",
+          "SMS",
+          "Video",
+          "Verify"
+        ],
+        "breadth": "broad",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "none",
+      "evidence": [
+        {
+          "claim": "Twilio offers a cloud-based API for 2FA and phone verification via Authy.",
+          "url": "https://finance.yahoo.com/news/twilio-acquires-authy-accelerate-strong-130000967.html",
+          "source_type": "article"
+        },
+        {
+          "claim": "Twilio provides API add-ons to integrate partner technologies using the Twilio API.",
+          "url": "https://finance.yahoo.com/news/twilio-launches-add-ons-pre-163000724.html",
+          "source_type": "article"
+        },
+        {
+          "claim": "Twilio supports API keys and HTTP Basic authentication for its APIs.",
+          "url": "https://www.twilio.com/docs/global-infrastructure/manage-regional-api-credentials",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Twilio Verify API requires HTTP Basic authentication with API key SID and secret.",
+          "url": "https://www.twilio.com/docs/verify/api",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Twilio API keys overview documents easy creation and usage of API keys for developers.",
+          "url": "https://www.twilio.com/docs/iam/api-keys",
+          "source_type": "documentation"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Unterminated string starting at: line 1 column 108 (char 107)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Unterminated string starting at: line 1 column 108 (char 107)"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "WhatsApp Business",
+    "category": "Communications and Messaging",
+    "status": "ok",
+    "report": {
+      "app": "WhatsApp Business",
+      "category": "Communications and Messaging",
+      "description": "WhatsApp Business Platform enables businesses to communicate with customers using WhatsApp through APIs, supporting messaging, templates, phone numbers, and business account management.",
+      "auth_methods": [
+        "OAuth 2.0"
+      ],
+      "credential_access": "paid",
+      "api": {
+        "types": [
+          "messaging",
+          "business messaging",
+          "template"
+        ],
+        "breadth": "moderate",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "requires Meta for Developers account approval",
+      "evidence": [
+        {
+          "claim": "WhatsApp Business authentication uses OAuth 2.0 Authorization.",
+          "url": "https://docs.uipath.com/integration-service/automation-cloud/latest/user-guide/uipath-meta-whatsapp-authentication",
+          "source_type": "web"
+        },
+        {
+          "claim": "WhatsApp Business Platform is a managed cloud service provided by Meta.",
+          "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/overview",
+          "source_type": "web"
+        },
+        {
+          "claim": "WhatsApp Business API supports messaging, template, and phone number endpoints.",
+          "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/about-the-platform",
+          "source_type": "web"
+        },
+        {
+          "claim": "Integration Service offers ready-to-use WhatsApp Business connectors.",
+          "url": "https://docs.uipath.com/integration-service/automation-cloud/latest/user-guide/uipath-meta-whatsapp-authentication",
+          "source_type": "web"
+        },
+        {
+          "claim": "WhatsApp Business Platform requires a Meta developer app and is a paid service.",
+          "url": "https://whatsappbusiness.com/products/business-platform",
+          "source_type": "web"
+        }
+      ],
+      "confidence": "high",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "high",
+        "checks": {
+          "credential_access": {
+            "verdict": "confirmed",
+            "reason": "Snippets list paid plans for WhatsApp Business API.",
+            "_evidence": [
+              {
+                "title": "Is the WhatsApp Business API Free? Here's What You Need to Know – Intelli Blog",
+                "url": "https://www.intelliconcierge.com/blog/is-the-whatsapp-business-api-free-heres-what-you-need-to-know",
+                "snippet": "Intelli's Starter plan is $35/month for up to 2,000 contacts. The Growth plan scales with volume. Enterprise plans are custom-priced for governments, NGOs, and large organizations. There is a 7-day free trial with no credit card required.\n\nCritically"
+              },
+              {
+                "title": "Get WhatsApp Business API for FREE",
+                "url": "https://aisensy.com/whatsapp-business-api",
+                "snippet": "| WhatsApp Business API  Suited for Growing Businesses & Enterprises    $150  per seat per year Apply For FREE | WhatsApp Business App  For Small Businesses    $450  per seat per year Get Started |\n --- |\n| WhatsApp Broadcasting Limit | UNLIMITED Use"
+              },
+              {
+                "title": "Is the WhatsApp Business API Free? Honest 2026 Answer",
+                "url": "https://wexio.io/blog/free-whatsapp-business-api",
+                "snippet": "Disclosure: I work on Wexio, and I've kept its WhatsApp status honest here - it's rolling out, not live for everyone yet. The rest of the list is researched independently.\n\nTwilio's WhatsApp Sandbox - free trial of WhatsApp via Twilio's number. Limit"
+              }
+            ]
+          },
+          "api_mcp": {
+            "verdict": "confirmed",
+            "reason": "Snippets describe existing MCP servers for WhatsApp Business.",
+            "_evidence": [
+              {
+                "title": "What is a WhatsApp MCP Server? Full Guide for 2026",
+                "url": "https://www.wati.io/en/blog/whatsapp-mcp-server",
+                "snippet": "MCP (Model Context Protocol) is an open standard that lets AI assistants like Claude connect to external platforms and take real actions inside them, not just generate text about them.\n A WhatsApp MCP server applies that standard to WhatsApp Business"
+              },
+              {
+                "title": "WhatsApp Business MCP Server | MCP S... · LobeHub",
+                "url": "https://lobehub.com/mcp/asherclement-whatsapp-mcp-server",
+                "snippet": "# WhatsApp Business MCP Server\n\nAn MCP (Model Context Protocol) server that connects AI agents to the WhatsApp Business Cloud API. Send messages, manage contacts, handle customer support — all through AI.\n\n## Features\n\n### Messaging (7 tools) [...] U"
+              },
+              {
+                "title": "Show HN: WhatsApp MCP Server | Hacker News",
+                "url": "https://news.ycombinator.com/item?id=43532967",
+                "snippet": "|  | | Hi HN – I built an open-source, self-hosted Model Context Protocol (MCP) server for WhatsApp:  It connects to your personal WhatsApp account via the WhatsApp Web multi-device API (using whatsmeow from the Beeper team), and doesn't rely on thir"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Zendesk",
+    "category": "Support and Helpdesk",
+    "status": "ok",
+    "report": {
+      "app": "Zendesk",
+      "category": "Support and Helpdesk",
+      "description": "Zendesk provides a comprehensive suite of customer service APIs covering ticketing, help center, live chat, voice, sales CRM and omnichannel routing. The APIs support creating, reading, updating, and searching tickets and users, and can be accessed via OAuth, basic authentication, or API tokens.",
+      "auth_methods": [
+        "OAuth",
+        "Basic Auth",
+        "API Token"
+      ],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "ticketing",
+          "help_center",
+          "live_chat",
+          "voice",
+          "sales_crm",
+          "omnichannel_routing",
+          "custom_data"
+        ],
+        "breadth": "broad",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "Requires admin‑level OAuth token (global token) for multi‑tenant integrations",
+      "evidence": [
+        {
+          "claim": "Zendesk supports OAuth access tokens and requires a verified user for API requests",
+          "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "Basic authentication with email and password is also supported for API calls",
+          "url": "https://support.zendesk.com/hc/en-us/articles/4408831452954-How-can-I-authenticate-API-requests",
+          "source_type": "support article"
+        },
+        {
+          "claim": "Global OAuth access tokens are required for apps, integrations, or bots that serve multiple Zendesk customers",
+          "url": "https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows",
+          "source_type": "support article"
+        },
+        {
+          "claim": "Zendesk offers a wide range of APIs across ticketing, help center, live chat, voice, sales CRM and more",
+          "url": "https://developer.zendesk.com/api-reference",
+          "source_type": "documentation"
+        },
+        {
+          "claim": "OAuth 2.0 flows (Authorization Code, Resource Owner Password Credentials) are provided for authentication",
+          "url": "https://developer.zendesk.com/api-reference/sales-crm/authentication/reference",
+          "source_type": "documentation"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Zoho CRM",
+    "category": "CRM and Sales",
+    "status": "ok",
+    "report": {
+      "app": "Zoho CRM",
+      "category": "CRM and Sales",
+      "description": "Zoho CRM provides a comprehensive set of RESTful APIs (Core, Bulk, and SDKs) for CRUD operations, searching, and module management, with OAuth2 authentication and optional Model Context Protocol (MCP) integration for AI agents.",
+      "auth_methods": [
+        "OAuth2"
+      ],
+      "credential_access": "self_serve",
+      "api": {
+        "types": [
+          "REST"
+        ],
+        "breadth": "broad",
+        "mcp": "yes"
+      },
+      "buildability": "ready",
+      "main_blocker": "none",
+      "evidence": [
+        {
+          "claim": "OAuth2 credentials can be created by users via a self‑serve flow",
+          "url": "https://composio.dev/auth/zoho",
+          "source_type": "web"
+        },
+        {
+          "claim": "Zoho CRM offers extensive REST APIs for CRUD, search, bulk operations, and SDKs",
+          "url": "https://www.zoho.com/crm/developer/docs",
+          "source_type": "web"
+        },
+        {
+          "claim": "Zoho provides a Model Context Protocol (MCP) server for AI integration",
+          "url": "https://www.zoho.com/mcp",
+          "source_type": "web"
+        },
+        {
+          "claim": "Developer documentation and tools are publicly available, indicating ready‑to‑build integration",
+          "url": "https://www.zohocrm.dev",
+          "source_type": "web"
+        },
+        {
+          "claim": "API sandbox and usage dashboard are available for testing and monitoring",
+          "url": "https://pipeline.zoominfo.com/sales/zoho-crm-api",
+          "source_type": "web"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "high",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  },
+  {
+    "app": "Zoho Cliq",
+    "category": "Communications and Messaging",
+    "status": "ok",
+    "report": {
+      "app": "Zoho Cliq",
+      "category": "Communications and Messaging",
+      "description": "Zoho Cliq is a real‑time messaging platform that connects teams with chat, video, and integration capabilities.",
+      "auth_methods": [],
+      "credential_access": "unknown",
+      "api": {
+        "types": [
+          "messaging"
+        ],
+        "breadth": "unknown",
+        "mcp": "unknown"
+      },
+      "buildability": "ready",
+      "main_blocker": "unknown",
+      "evidence": [
+        {
+          "claim": "Zoho Cliq provides documented APIs for creating messages.",
+          "url": "https://www.youtube.com/watch?v=WXsD0ZgxjRw",
+          "source_type": "video"
+        }
+      ],
+      "confidence": "medium",
+      "verification": {
+        "first_pass_confidence": "medium",
+        "after_verification_confidence": "medium",
+        "checks": {
+          "credential_access": {
+            "verdict": "inconclusive",
+            "reason": "original claim was already unknown"
+          },
+          "api_mcp": {
+            "verdict": "inconclusive",
+            "reason": "original claim was already unknown"
+          }
+        }
+      }
+    },
+    "needs_human_review": false,
+    "error": null
+  }
+]

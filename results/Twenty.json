@@ -1,0 +1,68 @@
+{
+  "app": "Twenty",
+  "category": "CRM and Sales",
+  "status": "ok",
+  "report": {
+    "app": "Twenty",
+    "category": "CRM and Sales",
+    "description": "An open‑source CRM platform that provides per‑workspace REST and GraphQL APIs for core and custom objects, supporting CRUD, batch operations, and schema inspection via generated endpoints.",
+    "auth_methods": [
+      "api_key"
+    ],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "REST",
+        "GraphQL"
+      ],
+      "breadth": "broad",
+      "mcp": "unknown"
+    },
+    "buildability": "ready",
+    "main_blocker": "API schema is generated per workspace, so integrations must discover the schema dynamically.",
+    "evidence": [
+      {
+        "claim": "Authentication uses Bearer API keys that can be created by users in the Settings → API & Webhooks page.",
+        "url": "https://docs.twenty.com/developers/extend/api",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "API key creation steps are documented, confirming self‑serve credential generation.",
+        "url": "https://docs.twenty.com/l/es/developers/extend/capabilities/apis",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "The Twenty API provides both REST and GraphQL endpoints for core CRM entities and custom objects.",
+        "url": "https://github.com/twentyhq/twenty/issues/10283",
+        "source_type": "github"
+      },
+      {
+        "claim": "Core API offers CRUD, batch upserts, and metadata management, indicating a broad API surface.",
+        "url": "https://www.taskrhino.ca/blog/twenty-crm-vs-salesforce",
+        "source_type": "article"
+      },
+      {
+        "claim": "Each workspace generates its own schema, requiring dynamic discovery but enabling full CRUD capabilities.",
+        "url": "https://docs.twenty.com/developers/extend/api",
+        "source_type": "documentation"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Unterminated string starting at: line 4 column 15 (char 69)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "original claim was already unknown"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

@@ -1,0 +1,85 @@
+{
+  "app": "Slack",
+  "category": "Communications and Messaging",
+  "status": "ok",
+  "report": {
+    "app": "Slack",
+    "category": "Communications and Messaging",
+    "description": "Slack is a communications and messaging platform that provides a rich set of APIs for building integrations and automations.",
+    "auth_methods": [
+      "OAuth 2.0"
+    ],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "Web API",
+        "Events API"
+      ],
+      "breadth": "broad",
+      "mcp": "unknown"
+    },
+    "buildability": "ready",
+    "main_blocker": "",
+    "evidence": [
+      {
+        "claim": "Slack requires OAuth authentication for app integration.",
+        "url": "https://docs.slack.dev/authentication",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Slack app credentials can be obtained via the Slack developer portal.",
+        "url": "https://docs.n8n.io/integrations/builtin/credentials/slack",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Slack provides a Web API with extensive methods.",
+        "url": "https://docs.slack.dev/apis/web-api",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Slack offers multiple API types including Web API and Events API.",
+        "url": "https://docs.slack.dev/apis",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Slack has a free plan, indicating self-serve credential access.",
+        "url": "https://slack.com/pricing",
+        "source_type": "pricing"
+      }
+    ],
+    "confidence": "low",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "low",
+      "checks": {
+        "credential_access": {
+          "verdict": "contradicted",
+          "reason": "To request a trial you must contact support, not self‑serve.",
+          "_evidence": [
+            {
+              "title": "Try a paid Slack plan for free | Slack",
+              "url": "https://slack.com/help/articles/202878523-Try-a-paid-Slack-plan-for-free",
+              "snippet": "## Request a trial\n\nIf you’re a Workspace Owner or Admin, contact us from the email address you used to sign up for your workspace. Please make sure to include your workspace URL in your request. You won't need to add a credit card to start your tria"
+            },
+            {
+              "title": "Slack Pricing Plans: Find the Right Fit for Your Team",
+              "url": "https://slack.com/pricing",
+              "snippet": "AI search\n\nAI daily recaps\n\nAI file summaries\n\nSAML-based single sign-on\n\nSCIM user management\n\nEMM integration support\n\nNative data loss prevention\n\nRecommended for you\n\nPro\n\nDrive productivity in one place\n\n50% off for 3 months\\\n\n$8.75$4.38USD\n\nper"
+            },
+            {
+              "title": "Free Plan | Pricing",
+              "url": "https://slack.com/pricing/free",
+              "snippet": "We’ve received internationally recognized security certifications for ISO 27001 (information security management system) and ISO 27018 (for protecting personal data in the cloud).\n\nLearn more about: Security | Privacy | GDPR Policy\n\n## You’re in good"
+            }
+          ]
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "original claim was already unknown"
+        }
+      }
+    }
+  },
+  "needs_human_review": true,
+  "error": null
+}

@@ -1,0 +1,103 @@
+{
+  "app": "Google Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "status": "ok",
+  "report": {
+    "app": "Google Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "description": "Google Ads API allows developers to programmatically manage Google Ads accounts, retrieve reports, and perform ad operations. It uses OAuth 2.0 for authentication and offers both REST and gRPC interfaces.",
+    "auth_methods": [
+      "OAuth 2.0",
+      "Service Account"
+    ],
+    "credential_access": "admin",
+    "api": {
+      "types": [
+        "REST",
+        "gRPC"
+      ],
+      "breadth": "broad",
+      "mcp": "no"
+    },
+    "buildability": "ready",
+    "main_blocker": "None",
+    "evidence": [
+      {
+        "claim": "Google Ads API requires OAuth 2.0 for authentication.",
+        "url": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+        "source_type": "web"
+      },
+      {
+        "claim": "OAuth 2.0 flow uses client_id and client_secret for user authorization.",
+        "url": "https://vishalzambre.com/tech/2025/07/16/google-ads-api-client-secret-refresh-token.html",
+        "source_type": "web"
+      },
+      {
+        "claim": "Google Ads API can be accessed via Service Account flow for Google Workspace.",
+        "url": "https://github.com/google/ads-api-report-fetcher/blob/main/docs/how-to-authenticate-ads-api.md",
+        "source_type": "github"
+      },
+      {
+        "claim": "Google Ads API provides broad coverage of campaign types including Performance Max, Demand Gen, Search, and Shopping.",
+        "url": "https://developers.google.com/google-ads/api",
+        "source_type": "web"
+      },
+      {
+        "claim": "Google Ads API offers both REST and gRPC interfaces.",
+        "url": "https://developers.google.com/google-ads/api",
+        "source_type": "web"
+      }
+    ],
+    "confidence": "low",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "low",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "Evidence does not mention Google Ads admin credentials.",
+          "_evidence": [
+            {
+              "title": "Gemini Developer API pricing",
+              "url": "https://ai.google.dev/gemini-api/docs/pricing",
+              "snippet": "| Grounding with Google Search | Free of charge, up to 500 RPD (limit shared with Flash RPD) | 1,500 RPD (free, limit shared with Flash RPD), then $35 / 1,000 grounded prompts |\n| Grounding with Google Maps | 500 RPD | 1,500 RPD (free), then $25 / 1,"
+            },
+            {
+              "title": "Google AI Studio Pricing (2026): Free, Paid Plans & Gemini ...",
+              "url": "https://www.nocode.mba/articles/google-ai-studio-pricing",
+              "snippet": "The key insight: Google AI Studio includes a Free plan, while AI Pro and AI Ultra plans can provide higher access and limits. Gemini Developer API billing is separate: free usage is quota-limited and paid tiers add production features. It's the Gemin"
+            },
+            {
+              "title": "What Are The Pricing Plans, And Do You Offer A Free Trial? - ClickPatrol™",
+              "url": "https://clickpatrol.com/knowledge-base/what-are-the-pricing-plans-and-do-you-offer-a-free-trial",
+              "snippet": "Stop rivals draining your budget.\n  + Sophisticated fraud icon Sophisticated Fraud\n\n    Catch SIVT that native filters miss.\n  + Click farms icon Click Farms\n\n    Stop coordinated low-quality click operations.\n  + Invalid traffic icon Invalid Traffic"
+            }
+          ]
+        },
+        "api_mcp": {
+          "verdict": "contradicted",
+          "reason": "Evidence confirms Google Ads has an MCP server.",
+          "_evidence": [
+            {
+              "title": "Google Ads MCP: Data Access & Management Tool",
+              "url": "https://mcpmarket.com/server/google-ads-1",
+              "snippet": "This Model Context Protocol (MCP) server facilitates access to Google Ads data via Claude Desktop, enabling users to manage campaigns, accounts, and performance metrics. It features API endpoints for budget, keyword, and ad group management, along wi"
+            },
+            {
+              "title": "Google Ads MCP server: Developer integration guide",
+              "url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+              "snippet": "# Google Ads MCP server: Developer integration guide Stay organized with collections Save and categorize content based on your preferences.\n\n   \n\nThe Model Context Protocol (MCP) is an open standard that enables Large Language Models (LLMs) to secure"
+            },
+            {
+              "title": "Google Ads Model Context Protocol (MCP Server): What Is MCP and How It Transforms Analytics",
+              "url": "https://analytics-tips.com/en/why-and-how-google-ads-mcp-is-changing-the-approach-to-ad-campaign-analytics",
+              "snippet": "## What is Model Context Protocol?\n\nI’ve already written in more detail on the blog about what Model Context Protocol is and why it represents the future of analytics, so here I’ll just give a brief explanation.\n\nModel Context Protocol (MCP) is a pro"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "needs_human_review": true,
+  "error": null
+}

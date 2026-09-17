@@ -1,0 +1,70 @@
+{
+  "app": "Lark (Larksuite)",
+  "category": "Communications and Messaging",
+  "status": "ok",
+  "report": {
+    "app": "Lark (Larksuite)",
+    "category": "Communications and Messaging",
+    "description": "A cloud-based collaboration suite offering messaging, file storage, document editing, and integration with web and native applications.",
+    "auth_methods": [
+      "user_access_token",
+      "tenant_access_token"
+    ],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "messaging",
+        "documents",
+        "collaboration"
+      ],
+      "breadth": "broad",
+      "mcp": "unknown"
+    },
+    "buildability": "ready",
+    "main_blocker": "",
+    "evidence": [
+      {
+        "claim": "Lark issues user and tenant access tokens for API authentication.",
+        "url": "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/bitable/notification",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Lark provides more than 2,500 APIs for developers.",
+        "url": "https://open.larksuite.com",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Lark Developer portal enables app registration and documentation access.",
+        "url": "https://open.larksuite.com",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Lark APIs cover messaging and collaboration features such as chat, file sharing, and document editing.",
+        "url": "https://www.larksuite.com/hc/en-US/articles/831091963734-overview-of-lark-developer",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Lark supports web applications using native H5 and gadgets via Lark DSL.",
+        "url": "https://www.larksuite.com/hc/en-US/articles/831091963734-overview-of-lark-developer",
+        "source_type": "documentation"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Unterminated string starting at: line 1 column 122 (char 121)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "original claim was already unknown"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

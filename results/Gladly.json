@@ -1,0 +1,69 @@
+{
+  "app": "Gladly",
+  "category": "Support and Helpdesk",
+  "status": "ok",
+  "report": {
+    "app": "Gladly",
+    "category": "Support and Helpdesk",
+    "description": "Gladly is a customer service platform that offers a publicly documented REST API for customers, conversations, agents, tasks, and knowledge base content. Tokens are generated in account settings and used for HTTP Basic Authentication, with optional OAuth for installable apps.",
+    "auth_methods": [
+      "HTTP Basic Auth",
+      "OAuth"
+    ],
+    "credential_access": "admin",
+    "api": {
+      "types": [
+        "REST",
+        "OpenAPI"
+      ],
+      "breadth": "moderate",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "None",
+    "evidence": [
+      {
+        "claim": "Gladly offers a publicly documented REST API, earning an A on Supergood's API Report Card.",
+        "url": "https://supergood.ai/api-report-card/gladly",
+        "source_type": "API Report Card"
+      },
+      {
+        "claim": "Gladly API is a RESTful service with an OpenAPI specification.",
+        "url": "https://developer.gladly.com/rest",
+        "source_type": "Developer Docs"
+      },
+      {
+        "claim": "API tokens are generated in account settings and used as HTTP Basic Auth passwords, indicating user-level token access.",
+        "url": "https://docs.extract.to/sources/gladly",
+        "source_type": "API Token Guide"
+      },
+      {
+        "claim": "Setting up Gladly integration requires admin access in Gladly.",
+        "url": "https://help.maestroqa.com/en/articles/5546875-gladly-integration",
+        "source_type": "Integration Guide"
+      },
+      {
+        "claim": "Gladly offers SDKs, sample apps, and a testing environment to support integration development.",
+        "url": "https://www.gladly.ai/gladly-developer-platform",
+        "source_type": "Developer Platform"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Unterminated string starting at: line 1 column 57 (char 56)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Unterminated string starting at: line 1 column 57 (char 56)"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

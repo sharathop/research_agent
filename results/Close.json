@@ -1,0 +1,70 @@
+{
+  "app": "Close",
+  "category": "CRM and Sales",
+  "status": "ok",
+  "report": {
+    "app": "Close",
+    "category": "CRM and Sales",
+    "description": "Close is an inside sales CRM that offers a comprehensive REST API, webhooks, and Model Context Protocol (MCP) integration for managing leads, contacts, activities, tasks, and other sales data.",
+    "auth_methods": [
+      "API Key",
+      "OAuth"
+    ],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "REST",
+        "Webhooks",
+        "MCP"
+      ],
+      "breadth": "broad",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "",
+    "evidence": [
+      {
+        "claim": "API keys can be created and managed by users in their Close account settings",
+        "url": "https://developer.close.com/api/overview/api-key-authentication",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "OAuth authentication is supported for Close API access",
+        "url": "https://developer.close.com/api/overview/oauth-authentication",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Close provides a Model Context Protocol (MCP) server for AI integration",
+        "url": "https://close.com/integrations/close-mcp",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Close offers a full-featured REST API and webhooks for extensive data access and automation",
+        "url": "https://developer.close.com",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "The API documentation describes comprehensive endpoints covering leads, contacts, activities, tasks, and more, indicating broad API coverage",
+        "url": "https://developer.close.com/api/overview",
+        "source_type": "documentation"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

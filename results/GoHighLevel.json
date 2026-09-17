@@ -1,0 +1,53 @@
+{
+  "app": "GoHighLevel",
+  "category": "Marketing, Ads, Email and Social",
+  "status": "ok",
+  "report": {
+    "app": "GoHighLevel",
+    "category": "Marketing, Ads, Email and Social",
+    "description": "",
+    "auth_methods": [],
+    "credential_access": "unknown",
+    "api": {
+      "types": [],
+      "breadth": "unknown",
+      "mcp": "unknown"
+    },
+    "buildability": "unclear",
+    "main_blocker": "Unclear API access or buildability",
+    "evidence": [
+      {
+        "claim": "No publicly documented credential access method found",
+        "url": "https://support.google.com/business/thread/349166900/several-business-profiles-managed-through-gohighlevel-tracking-were-suspended-after-posting-ser?hl=en",
+        "source_type": "forum"
+      },
+      {
+        "claim": "No API documentation or example usage found",
+        "url": "https://www.youtube.com/watch?v=jdX_CrrA2qM",
+        "source_type": "video"
+      },
+      {
+        "claim": "No clear information on buildability or developer resources",
+        "url": "https://rocketreach.co/gohighlevel-profile_b45b2d5efc5a8495",
+        "source_type": "profile"
+      }
+    ],
+    "confidence": "low",
+    "verification": {
+      "first_pass_confidence": "low",
+      "after_verification_confidence": "low",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "original claim was already unknown"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "original claim was already unknown"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

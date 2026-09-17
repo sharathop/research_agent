@@ -1,0 +1,58 @@
+{
+  "app": "Plain",
+  "category": "Support and Helpdesk",
+  "status": "ok",
+  "report": {
+    "app": "Plain",
+    "category": "Support and Helpdesk",
+    "description": "Plain is an AI‑native, API‑first customer support platform for B2B teams, consolidating conversations from email, Slack, Teams, chat, Discord, and in‑app channels into a single thread queue that both humans and AI agents can work from.",
+    "auth_methods": [
+      "api_key"
+    ],
+    "credential_access": "paid",
+    "api": {
+      "types": [
+        "graphql",
+        "rest"
+      ],
+      "breadth": "broad",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "unknown",
+    "evidence": [
+      {
+        "claim": "Plain is an AI‑native support platform with an API that supports rapid integration.",
+        "url": "https://www.plain.com/blog/blog-best-ai-customer-support-platforms-b2b-2025",
+        "source_type": "blog"
+      },
+      {
+        "claim": "Plain emphasizes a fast, code‑free start and extensive API documentation for developers.",
+        "url": "https://www.linkedin.com/company/plainsupport",
+        "source_type": "linkedin"
+      },
+      {
+        "claim": "Plain provides comprehensive documentation outlining API endpoints for customers, threads, and more.",
+        "url": "https://www.plain.com/docs/product/what-is-plain",
+        "source_type": "documentation"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "medium",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting property name enclosed in double quotes: line 7 column 31 (char 215)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting property name enclosed in double quotes: line 7 column 31 (char 215)"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

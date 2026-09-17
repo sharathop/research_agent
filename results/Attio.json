@@ -1,0 +1,68 @@
+{
+  "app": "Attio",
+  "category": "CRM and Sales",
+  "status": "ok",
+  "report": {
+    "app": "Attio",
+    "category": "CRM and Sales",
+    "description": "Attio is a modern CRM platform that offers a RESTful API, custom objects, and a Model Context Protocol (MCP) server for AI integration, with tiered pricing that includes API and webhook access.",
+    "auth_methods": [
+      "access_token",
+      "OAuth"
+    ],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "API access may require an approved developer status or a paid plan tier.",
+    "evidence": [
+      {
+        "claim": "Developers can create a developer account, register an integration, set scopes, and generate an access token to authenticate API calls.",
+        "url": "https://www.stacksync.com/blog/how-to-get-an-attio-developer-account-and-start-working-with-attios-api",
+        "source_type": "web"
+      },
+      {
+        "claim": "Attio provides a REST API covering objects, attributes, and records with extensive documentation.",
+        "url": "https://apitracker.io/a/attio",
+        "source_type": "web"
+      },
+      {
+        "claim": "Attio offers a Model Context Protocol (MCP) server that enables AI tools to securely access the workspace.",
+        "url": "https://reply.io/blog/attio-mcp",
+        "source_type": "web"
+      },
+      {
+        "claim": "The official Attio MCP documentation describes MCP as an open standard for connecting AI assistants to the CRM.",
+        "url": "https://docs.attio.com/mcp/overview",
+        "source_type": "web"
+      },
+      {
+        "claim": "API and webhook access are listed as features on Pro and Enterprise pricing tiers.",
+        "url": "https://attio.com/pricing",
+        "source_type": "web"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Unterminated string starting at: line 4 column 15 (char 72)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Unterminated string starting at: line 4 column 15 (char 72)"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

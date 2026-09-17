@@ -1,0 +1,45 @@
+{
+  "app": "Zoho Cliq",
+  "category": "Communications and Messaging",
+  "status": "ok",
+  "report": {
+    "app": "Zoho Cliq",
+    "category": "Communications and Messaging",
+    "description": "Zoho Cliq is a real‑time messaging platform that connects teams with chat, video, and integration capabilities.",
+    "auth_methods": [],
+    "credential_access": "unknown",
+    "api": {
+      "types": [
+        "messaging"
+      ],
+      "breadth": "unknown",
+      "mcp": "unknown"
+    },
+    "buildability": "ready",
+    "main_blocker": "unknown",
+    "evidence": [
+      {
+        "claim": "Zoho Cliq provides documented APIs for creating messages.",
+        "url": "https://www.youtube.com/watch?v=WXsD0ZgxjRw",
+        "source_type": "video"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "medium",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "original claim was already unknown"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "original claim was already unknown"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

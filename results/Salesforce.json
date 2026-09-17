@@ -1,0 +1,70 @@
+{
+  "app": "Salesforce",
+  "category": "CRM and Sales",
+  "status": "ok",
+  "report": {
+    "app": "Salesforce",
+    "category": "CRM and Sales",
+    "description": "Salesforce offers a comprehensive set of cloud CRM APIs (REST, SOAP, GraphQL) accessible via OAuth 2.0 flows and supports the Model Context Protocol through hosted MCP servers. A free Developer Edition provides self‑service access for testing and building integrations.",
+    "auth_methods": [
+      "OAuth 2.0 Client Credentials",
+      "OAuth 2.0 Authorization Code"
+    ],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "REST",
+        "GraphQL",
+        "SOAP"
+      ],
+      "breadth": "broad",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "Requires creation of a Connected App and appropriate OAuth scopes (admin setup).",
+    "evidence": [
+      {
+        "claim": "Free Developer Edition provides self‑service access to Salesforce APIs",
+        "url": "https://s2-labs.com/blog/set-up-free-salesforce-developer-edition-account",
+        "source_type": "web"
+      },
+      {
+        "claim": "OAuth client credentials flow can be used to obtain access tokens for API calls",
+        "url": "https://developer.salesforce.com/blogs/2024/02/invoke-rest-apis-with-the-salesforce-integration-user-and-oauth-client-credentials",
+        "source_type": "web"
+      },
+      {
+        "claim": "Salesforce supports Model Context Protocol via Hosted MCP Servers",
+        "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html",
+        "source_type": "web"
+      },
+      {
+        "claim": "Salesforce APIs include REST and GraphQL endpoints",
+        "url": "https://developer.salesforce.com/docs/platform/graphql/guide/graphql-about.html",
+        "source_type": "web"
+      },
+      {
+        "claim": "Connected apps and OAuth 2.0 are required for API access",
+        "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-oauth-and-connected-apps.html",
+        "source_type": "web"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Unterminated string starting at: line 2 column 59 (char 60)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Unterminated string starting at: line 2 column 59 (char 60)"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

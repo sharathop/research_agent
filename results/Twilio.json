@@ -1,0 +1,71 @@
+{
+  "app": "Twilio",
+  "category": "Communications and Messaging",
+  "status": "ok",
+  "report": {
+    "app": "Twilio",
+    "category": "Communications and Messaging",
+    "description": "Cloud-based programmable communications platform providing APIs for voice, SMS, video, and authentication services such as Authy 2FA.",
+    "auth_methods": [
+      "HTTP Basic authentication",
+      "API keys"
+    ],
+    "credential_access": "paid",
+    "api": {
+      "types": [
+        "Voice",
+        "SMS",
+        "Video",
+        "Verify"
+      ],
+      "breadth": "broad",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "none",
+    "evidence": [
+      {
+        "claim": "Twilio offers a cloud-based API for 2FA and phone verification via Authy.",
+        "url": "https://finance.yahoo.com/news/twilio-acquires-authy-accelerate-strong-130000967.html",
+        "source_type": "article"
+      },
+      {
+        "claim": "Twilio provides API add-ons to integrate partner technologies using the Twilio API.",
+        "url": "https://finance.yahoo.com/news/twilio-launches-add-ons-pre-163000724.html",
+        "source_type": "article"
+      },
+      {
+        "claim": "Twilio supports API keys and HTTP Basic authentication for its APIs.",
+        "url": "https://www.twilio.com/docs/global-infrastructure/manage-regional-api-credentials",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Twilio Verify API requires HTTP Basic authentication with API key SID and secret.",
+        "url": "https://www.twilio.com/docs/verify/api",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Twilio API keys overview documents easy creation and usage of API keys for developers.",
+        "url": "https://www.twilio.com/docs/iam/api-keys",
+        "source_type": "documentation"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Unterminated string starting at: line 1 column 108 (char 107)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Unterminated string starting at: line 1 column 108 (char 107)"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

@@ -1,0 +1,102 @@
+{
+  "app": "Pipedrive",
+  "category": "CRM and Sales",
+  "status": "ok",
+  "report": {
+    "app": "Pipedrive",
+    "category": "CRM and Sales",
+    "description": "Pipedrive provides a RESTful CRM API with both OAuth 2.0 and personal API token authentication, supporting full read/write access to deals, leads, persons, organizations, and other resources across all pricing tiers. It also offers a native Model Context Protocol (MCP) for LLM integration.",
+    "auth_methods": [
+      "OAuth 2.0",
+      "API token"
+    ],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "",
+    "evidence": [
+      {
+        "claim": "API credentials (personal API key) can be obtained by users themselves via the UI",
+        "url": "https://support.pipedrive.com/en/article/how-can-i-find-my-personal-api-key",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "OAuth 2.0 is the primary auth flow for building apps and accessing the API",
+        "url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Pipedrive offers a native Model Context Protocol (MCP) for secure AI assistant integration",
+        "url": "https://support.pipedrive.com/en/article/mcp",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "API access is available on every plan, providing a comprehensive REST surface",
+        "url": "https://pipeline.zoominfo.com/sales/pipedrive-api",
+        "source_type": "analysis"
+      },
+      {
+        "claim": "Comprehensive API documentation and stable endpoints make building integrations straightforward",
+        "url": "https://pipedrive.readme.io/docs/pipedrive-api-v2",
+        "source_type": "documentation"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "Snippets do not mention Pipedrive credential access or self‑serve capabilities.",
+          "_evidence": [
+            {
+              "title": "Crypto API Pricing Plans | CoinGecko",
+              "url": "https://www.coingecko.com/en/api/pricing",
+              "snippet": "Learn\n\n Learn \n\nLearn CryptoResearch InsightsNewsReportsLearn & EarnVideosNewsletterGlossary\n\n Products \n\nCrypto PortfolioCoinGecko AppCoinGecko Premium Free Trial\n\nFor Businesses\n\nAdvertising\n\nFor Developers\n\nCrypto Widget\n\nOn-Chain\n\nGeckoTerminal\n\n"
+            },
+            {
+              "title": "Crypto API Pricing Plans | CoinGecko",
+              "url": "http://www.coingecko.com/en/api/pricing",
+              "snippet": "Learn\n\n Learn \n\nLearn CryptoResearch InsightsNewsReportsLearn & EarnVideosNewsletterGlossary\n\n Products \n\nCrypto PortfolioCoinGecko AppCoinGecko Premium Free Trial\n\nFor Businesses\n\nAdvertising\n\nFor Developers\n\nCrypto Widget\n\nOn-Chain\n\nGeckoTerminal\n\n"
+            },
+            {
+              "title": "r/developer",
+              "url": "https://www.reddit.com/r/developer",
+              "snippet": "By continuing, you agree to our User Agreement and acknowledge that you understand the Privacy Policy.\n\nImage 4 [...] u/RedEagle_MGN\n\n•1 mo. agoAs a mod, I would love to get to know the community more, what got you into development?QuestionAs a mod, "
+            }
+          ]
+        },
+        "api_mcp": {
+          "verdict": "confirmed",
+          "reason": "Multiple snippets describe Pipedrive's official Model Context Protocol (MCP) server.",
+          "_evidence": [
+            {
+              "title": "What Is Pipedrive MCP? The Complete 2026 Guide",
+              "url": "https://tldv.io/blog/pipedrive-mcp",
+              "snippet": "Table of Contents\n\nPipedrive MCP is Pipedrive’s official Model Context Protocol server: a secure bridge that lets AI assistants like Claude and ChatGPT query and update your CRM in natural language. Pipedrive launched this official version on June 30"
+            },
+            {
+              "title": "Native Model Context Protocol (MCP) from Pipedrive",
+              "url": "https://support.pipedrive.com/en/article/mcp",
+              "snippet": "A model context protocol, or MCP, is an open standard that allows large language models (LLMs) and AI assistants to securely interact with structured data and external services. [...] Pipedrive’s native MCP makes it easier for AI assistants to secure"
+            },
+            {
+              "title": "Pipedrive MCP Server",
+              "url": "https://mcp.so/servers/pipedrive-mcp-server",
+              "snippet": "No tools detected\n\nFetch the live tool list by running this server in a temporary sandbox using the button above.\n\n## Overview\n\n## What is Pipedrive MCP Server?\n\nA Model Context Protocol (MCP) server that connects to Pipedrive CRM using the official "
+            }
+          ]
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

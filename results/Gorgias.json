@@ -1,0 +1,75 @@
+{
+  "app": "Gorgias",
+  "category": "Support and Helpdesk",
+  "status": "ok",
+  "report": {
+    "app": "Gorgias",
+    "category": "Support and Helpdesk",
+    "description": "Customer support and helpdesk platform that provides a RESTful API for managing tickets, customers, messages, and related resources.",
+    "auth_methods": [
+      "API Key",
+      "OAuth 2.0"
+    ],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "unknown"
+    },
+    "buildability": "ready",
+    "main_blocker": "unknown",
+    "evidence": [
+      {
+        "claim": "Credentials can be self-generated in the user settings.",
+        "url": "https://docs.gorgias.com/en-US/articles/developer-resources-18370",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "API provides comprehensive coverage of tickets, customers, messages, and more via a REST interface.",
+        "url": "https://apis.io/apis/gorgias/gorgias-tags-api",
+        "source_type": "api_spec"
+      },
+      {
+        "claim": "Developer guide indicates the use of Gorgias API V2 for support automation.",
+        "url": "https://www.eesel.ai/blog/gorgias-api-v2",
+        "source_type": "blog"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "snippets mention plans and developer registration but do not explicitly state that credential access is self‑serve.",
+          "_evidence": [
+            {
+              "title": "How to Choose the Best Gorgias Plan For You",
+              "url": "https://www.gorgias.com/blog/gorgias-plan",
+              "snippet": "TL;DR:\n\n Gorgias offers five main plans: Starter ($10 USD/month), Basic ($60/month), Pro ($360/month), Advanced ($900/month), and Enterprise (custom quote)\n Pricing is based on billable tickets with monthly allotments ranging from 50 to 5,000 tickets"
+            },
+            {
+              "title": "Gorgias Pricing 2026: Plans, AI Agent Costs, and the Ticket Meter | Drag Blog",
+              "url": "https://www.dragapp.com/blog/gorgias-pricing",
+              "snippet": "Gorgias→Drag\n\nWeighing up Gorgias? Drag starts at $12 a seat.In Gmail or as a standalone app\n\nStart free trial\n\nGorgias pricing vs Drag: the full range\n\nEach bar runs from the vendor’s cheapest published plan to its most expensive.A striped tail mean"
+            },
+            {
+              "title": "1. Register on Developer Portal & Get Gorgias Sandbox Account",
+              "url": "https://developers.gorgias.com/docs/1-register-on-developer-portal",
+              "snippet": "Register on our Developer Portal;\n Once you register, feel free to create a trial account and reach out to (/cdn-cgi/l/email-protection#097d6c6a6179687b7d676c7b7a496e667b6e60687a276a6664) to transform it into a developer account.\n  + ⚠️ You will need"
+            }
+          ]
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "original claim was already unknown"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

@@ -1,0 +1,75 @@
+{
+  "app": "Zendesk",
+  "category": "Support and Helpdesk",
+  "status": "ok",
+  "report": {
+    "app": "Zendesk",
+    "category": "Support and Helpdesk",
+    "description": "Zendesk provides a comprehensive suite of customer service APIs covering ticketing, help center, live chat, voice, sales CRM and omnichannel routing. The APIs support creating, reading, updating, and searching tickets and users, and can be accessed via OAuth, basic authentication, or API tokens.",
+    "auth_methods": [
+      "OAuth",
+      "Basic Auth",
+      "API Token"
+    ],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "ticketing",
+        "help_center",
+        "live_chat",
+        "voice",
+        "sales_crm",
+        "omnichannel_routing",
+        "custom_data"
+      ],
+      "breadth": "broad",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "Requires admin‑level OAuth token (global token) for multi‑tenant integrations",
+    "evidence": [
+      {
+        "claim": "Zendesk supports OAuth access tokens and requires a verified user for API requests",
+        "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Basic authentication with email and password is also supported for API calls",
+        "url": "https://support.zendesk.com/hc/en-us/articles/4408831452954-How-can-I-authenticate-API-requests",
+        "source_type": "support article"
+      },
+      {
+        "claim": "Global OAuth access tokens are required for apps, integrations, or bots that serve multiple Zendesk customers",
+        "url": "https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows",
+        "source_type": "support article"
+      },
+      {
+        "claim": "Zendesk offers a wide range of APIs across ticketing, help center, live chat, voice, sales CRM and more",
+        "url": "https://developer.zendesk.com/api-reference",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "OAuth 2.0 flows (Authorization Code, Resource Owner Password Credentials) are provided for authentication",
+        "url": "https://developer.zendesk.com/api-reference/sales-crm/authentication/reference",
+        "source_type": "documentation"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

@@ -1,0 +1,72 @@
+{
+  "app": "Pumble",
+  "category": "Communications and Messaging",
+  "status": "ok",
+  "report": {
+    "app": "Pumble",
+    "category": "Communications and Messaging",
+    "description": "A comprehensive team communication and collaboration platform offering messaging, channels, file sharing, and video conferencing with an API that supports automated workflows.",
+    "auth_methods": [],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "public"
+      ],
+      "breadth": "moderate",
+      "mcp": "unknown"
+    },
+    "buildability": "ready",
+    "main_blocker": "",
+    "evidence": [
+      {
+        "claim": "Users can generate their own API keys to authenticate with Pumble",
+        "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Multiple API endpoints are available such as list users, channels, messages, and sending messages",
+        "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Integration with Make.com demonstrates ready-to-use integration patterns for Pumble",
+        "url": "https://apps.make.com/pumble-zqpuu6",
+        "source_type": "app_store"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "No evidence about self-serve credential access is present in the snippets.",
+          "_evidence": [
+            {
+              "title": "Honest Pumble Review: Pros, Cons, Features & Pricing",
+              "url": "https://connecteam.com/reviews/pumble",
+              "snippet": "Verdict: 7.5/10\n\nPumble’s generous free trial and affordable paid tiers appeal to freelancers and small teams on shoestring budgets. Cake.com offers a bundle for $12.99 per user that combines time tracking, communication, and task management tools. H"
+            },
+            {
+              "title": "Pricing - Pumble™",
+              "url": "https://pumble.com/pricing",
+              "snippet": "\"Pumble has greatly improved our communication — it reduced the distance and increased the communication flow.\"\n\n More stories\n\nLog In\n\nDownload Pumble\n\nWatch tour)\n\nBook a demo\n\n# Plans & Pricing\n\nStart using Pumble for free, and upgrade when you ne"
+            },
+            {
+              "title": "Pumble by Maxmel Tech - Apps Documentation - Make",
+              "url": "https://apps.make.com/pumble-zqpuu6",
+              "snippet": "any channel press enter or the send button to complete the action copy the generated api key from the ephemeral message you receive some community developers require an additional specific api key retrieve the required api key from the community deve"
+            }
+          ]
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "original claim was already unknown"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

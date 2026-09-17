@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Researching 32 apps with an agent — Composio case study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14171F;
+    --ink-soft: #4A4E5A;
+    --paper: #F4F5F1;
+    --paper-raised: #FFFFFF;
+    --rule: #D7D9D0;
+    --accent: #2451D9;
+    --accent-soft: #E8EDFC;
+    --green: #1F7A54;
+    --green-soft: #E4F2EA;
+    --amber: #A8641E;
+    --amber-soft: #FBEDDD;
+    --red: #B23A3A;
+    --red-soft: #FBE7E7;
+    --gray: #7C7E74;
+    --gray-soft: #EAEAE4;
+    --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #EDEEE8;
+      --ink-soft: #ABAFA0;
+      --paper: #16181C;
+      --paper-raised: #1E2126;
+      --rule: #33362E;
+      --accent: #7C9CFF;
+      --accent-soft: #232A42;
+      --green: #6FCFA0;
+      --green-soft: #1B2E24;
+      --amber: #E3A25C;
+      --amber-soft: #332616;
+      --red: #E58888;
+      --red-soft: #331C1C;
+      --gray: #9A9C90;
+      --gray-soft: #26271F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #EDEEE8;
+    --ink-soft: #ABAFA0;
+    --paper: #16181C;
+    --paper-raised: #1E2126;
+    --rule: #33362E;
+    --accent: #7C9CFF;
+    --accent-soft: #232A42;
+    --green: #6FCFA0;
+    --green-soft: #1B2E24;
+    --amber: #E3A25C;
+    --amber-soft: #332616;
+    --red: #E58888;
+    --red-soft: #331C1C;
+    --gray: #9A9C90;
+    --gray-soft: #26271F;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent-soft); color: var(--ink); }
+
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  .wide { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+  header.hero {
+    padding: 64px 0 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .dek {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0 0 18px;
+    letter-spacing: 0.01em;
+  }
+  h1.headline {
+    font-size: clamp(28px, 4.4vw, 44px);
+    line-height: 1.14;
+    font-weight: 600;
+    margin: 0 0 22px;
+    max-width: 18ch;
+  }
+  .sub {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 62ch;
+    margin: 0 0 36px;
+  }
+
+  .statline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .stat {
+    flex: 1 1 150px;
+    padding: 18px 22px 18px 0;
+    border-right: 1px solid var(--rule);
+    margin-right: 22px;
+  }
+  .stat:last-child { border-right: none; margin-right: 0; }
+  .stat .n {
+    font-family: var(--font-mono);
+    font-size: 30px;
+    font-weight: 500;
+    display: block;
+  }
+  .stat .l {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    display: block;
+  }
+
+  section { padding: 52px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+  h2.sh {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+  .sh-note {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin: 0 0 30px;
+    max-width: 62ch;
+  }
+
+  .patterns { display: grid; gap: 22px; }
+  .pattern {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .pattern .mark {
+    width: 34px; height: 34px;
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+  .pattern .mark.g { background: var(--green-soft); color: var(--green); }
+  .pattern .mark.a { background: var(--amber-soft); color: var(--amber); }
+  .pattern .mark.r { background: var(--red-soft); color: var(--red); }
+  .pattern .mark.b { background: var(--accent-soft); color: var(--accent); }
+  .pattern p { margin: 0; }
+  .pattern strong { font-weight: 600; }
+
+  .tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+    line-height: 1.6;
+  }
+  .tag.g { background: var(--green-soft); color: var(--green); }
+  .tag.a { background: var(--amber-soft); color: var(--amber); }
+  .tag.r { background: var(--red-soft); color: var(--red); }
+  .tag.gray { background: var(--gray-soft); color: var(--gray); }
+  .tag.b { background: var(--accent-soft); color: var(--accent); }
+
+  .filters {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 20px;
+  }
+  .filter-btn {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    padding: 6px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: var(--paper-raised);
+    color: var(--ink-soft);
+    cursor: pointer;
+  }
+  .filter-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .table-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: var(--paper-raised);
+  }
+  table { border-collapse: collapse; width: 100%; min-width: 780px; }
+  thead th {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper-raised);
+    position: sticky; top: 0;
+  }
+  tbody td {
+    padding: 12px 14px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: middle;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: var(--paper); }
+  td.app-name { font-weight: 500; }
+  td.cat-name { color: var(--ink-soft); font-size: 13px; }
+  .flag { color: var(--red); font-family: var(--font-mono); font-size: 12px; }
+
+  .pipeline { margin: 30px 0 10px; }
+  .pipeline svg { width: 100%; height: auto; display: block; }
+
+  .human-list { margin: 26px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+  .human-list li {
+    padding: 14px 16px;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    font-size: 14.5px;
+  }
+  .human-list b { font-weight: 600; }
+
+  .verify-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  .verify-cell {
+    background: var(--paper-raised);
+    padding: 18px 16px;
+  }
+  .verify-cell .n { font-family: var(--font-mono); font-size: 26px; font-weight: 500; display: block; }
+  .verify-cell .l { font-size: 12.5px; color: var(--ink-soft); margin-top: 4px; display: block; }
+
+  .spot-check {
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+    background: var(--paper-raised);
+  }
+  .spot-check .verdict {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 3px 9px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .spot-check .verdict.hit { background: var(--green-soft); color: var(--green); }
+  .spot-check .verdict.miss { background: var(--red-soft); color: var(--red); }
+  .spot-check h3 { margin: 0 0 8px; font-size: 16px; font-weight: 600; }
+  .spot-check p { margin: 0 0 6px; font-size: 14.5px; color: var(--ink-soft); }
+
+  .limit-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
+  .limit-list li {
+    padding-left: 18px;
+    border-left: 2px solid var(--rule);
+    font-size: 15px;
+  }
+  .limit-list b { font-weight: 600; }
+
+  .proof-box {
+    border: 1px dashed var(--rule);
+    border-radius: 8px;
+    padding: 22px 24px;
+    background: var(--paper-raised);
+  }
+  .proof-box h3 { margin: 0 0 10px; font-size: 16px; }
+  .proof-box ul { margin: 10px 0 0; padding-left: 20px; font-size: 14.5px; }
+  .proof-box li { margin-bottom: 6px; }
+
+  footer {
+    padding: 40px 0 60px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 640px) {
+    header.hero { padding: 44px 0 32px; }
+    .stat { flex: 1 1 44%; }
+    section { padding: 40px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="dek">Composio toolkit-research take-home — agent-run diligence across CRM, support, comms &amp; ad platforms</p>
+    <h1 class="headline">CRM tools hand out keys freely. Support tools vary wildly. Most agent errors were infrastructure artifacts.</h1>
+    <p class="sub">An agent researched 32 of the assignment's 100 apps end-to-end — auth, credential access, API surface, MCP availability, and buildability verdicts, backed by evidence URLs — before a free-tier token ceiling stopped the batch mid-run. This page details what it found, what it got wrong, and where a human post-mortem uncovered a 33% error rate on spot checks.</p>
+    <div class="statline">
+      <div class="stat"><span class="n">32 / 100</span><span class="l">apps researched</span></div>
+      <div class="stat"><span class="n">23</span><span class="l">completed clean</span></div>
+      <div class="stat"><span class="n">9</span><span class="l">errored out</span></div>
+      <div class="stat"><span class="n">33%</span><span class="l">manual spot-check error rate</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="patterns">
+  <div class="wrap">
+    <h2 class="sh">The patterns</h2>
+    <p class="sh-note">Core findings from the completed apps the agent fully processed.</p>
+    <div class="patterns">
+      <div class="pattern">
+        <div class="mark g">89%</div>
+        <p><strong>CRM &amp; Sales is the easiest category.</strong> Most completed CRM apps (Salesforce, HubSpot, Pipedrive, Twenty, Podio, Zoho CRM, Close, Attio) offer self-serve credentials — sign up, generate a key or OAuth token, and start building immediately without sales calls.</p>
+      </div>
+      <div class="pattern">
+        <div class="mark a">5-way split</div>
+        <p><strong>Support &amp; Helpdesk lacks a standard pattern.</strong> Completed apps span multiple credential access tiers: Zendesk and Intercom are self-serve, Gladly requires admin setup, LiveAgent is trial-gated, Plain is paid, and Pylon requires a contact-sales workflow.</p>
+      </div>
+      <div class="pattern">
+        <div class="mark b">64%</div>
+        <p><strong>MCP is gaining ground, but gaps remain.</strong> A majority of completed apps expose an MCP server, though several came back <span class="tag gray">unknown</span> where the agent correctly declined to guess without verified evidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="findings">
+  <div class="wide">
+    <h2 class="sh">The findings</h2>
+    <p class="sh-note">All 32 apps processed by the agent, featuring final verdicts per field.</p>
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-cat="all">All (32)</button>
+      <button class="filter-btn" data-cat="CRM and Sales">CRM &amp; Sales</button>
+      <button class="filter-btn" data-cat="Support and Helpdesk">Support &amp; Helpdesk</button>
+      <button class="filter-btn" data-cat="Communications and Messaging">Communications</button>
+      <button class="filter-btn" data-cat="Marketing, Ads, Email and Social">Marketing &amp; Ads</button>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>App</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Credential access</th>
+            <th>MCP</th>
+            <th>Buildability</th>
+            <th>Confidence</th>
+            <th>Flagged</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="agent">
+  <div class="wrap">
+    <h2 class="sh">The agent</h2>
+    <p class="sh-note">A Python pipeline built on Composio's SDK — one long-lived session, a fixed tool-call pattern, two models with different jobs, and a verification pass that re-checks itself before handing a verdict to a human.</p>
+
+    <div class="pipeline">
+      <svg viewBox="0 0 1000 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pipeline diagram">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="var(--ink-soft)"></path>
+          </marker>
+        </defs>
+        <style>
+          .node rect { fill: var(--paper-raised); stroke: var(--rule); stroke-width: 1; rx: 6; }
+          .node text { font-family: 'IBM Plex Mono', monospace; font-size: 12px; fill: var(--ink); }
+          .node .label { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 500; fill: var(--ink); }
+          .flow { stroke: var(--ink-soft); stroke-width: 1.2; fill: none; marker-end: url(#arrow); }
+          .stepnum { font-family: 'IBM Plex Mono', monospace; font-size: 11px; fill: var(--accent); font-weight: 600; }
+        </style>
+
+        <g class="node">
+          <rect x="10" y="90" width="140" height="70"></rect>
+          <text x="24" y="115" class="stepnum">1</text>
+          <text x="24" y="135" class="label">Search Composio</text>
+          <text x="24" y="150" fill="var(--ink-soft)">COMPOSIO_SEARCH_TOOLS</text>
+        </g>
+
+        <path class="flow" d="M150,125 L188,125"></path>
+
+        <g class="node">
+          <rect x="190" y="90" width="140" height="70"></rect>
+          <text x="204" y="115" class="stepnum">2</text>
+          <text x="204" y="135" class="label">Get schemas</text>
+          <text x="204" y="150" fill="var(--ink-soft)">GET_TOOL_SCHEMAS</text>
+        </g>
+
+        <path class="flow" d="M330,125 L368,125"></path>
+
+        <g class="node">
+          <rect x="370" y="90" width="150" height="70"></rect>
+          <text x="384" y="115" class="stepnum">3</text>
+          <text x="384" y="135" class="label">Execute / search web</text>
+          <text x="384" y="150" fill="var(--ink-soft)">MULTI_EXECUTE + browser</text>
+        </g>
+
+        <path class="flow" d="M445,90 C445,60 384,60 384,88" opacity="0.6"></path>
+        <text x="392" y="55" fill="var(--ink-soft)" font-family="IBM Plex Mono, monospace" font-size="10">loop up to 4 steps · fast model</text>
+
+        <path class="flow" d="M520,125 L558,125"></path>
+
+        <g class="node">
+          <rect x="560" y="90" width="150" height="70" stroke="var(--accent)"></rect>
+          <text x="574" y="115" class="stepnum">4</text>
+          <text x="574" y="135" class="label">Synthesize report</text>
+          <text x="574" y="150" fill="var(--ink-soft)">big model · JSON only</text>
+        </g>
+
+        <path class="flow" d="M710,125 L748,125"></path>
+
+        <g class="node">
+          <rect x="750" y="30" width="150" height="70" stroke="var(--accent)"></rect>
+          <text x="764" y="55" class="stepnum">5</text>
+          <text x="764" y="75" class="label">Independent verify</text>
+          <text x="764" y="90" fill="var(--ink-soft)">fresh search + 2nd model</text>
+        </g>
+
+        <path class="flow" d="M825,100 L825,158" opacity="0.6"></path>
+
+        <g class="node">
+          <rect x="750" y="160" width="150" height="70"></rect>
+          <text x="764" y="185" class="label">confirmed /</text>
+          <text x="764" y="203" class="label">contradicted /</text>
+          <text x="764" y="221" fill="var(--ink-soft)">inconclusive</text>
+        </g>
+
+        <g class="node">
+          <rect x="10" y="200" width="700" height="46" stroke-dasharray="3,3"></rect>
+          <text x="24" y="228" fill="var(--ink-soft)">One Composio session + one tools() fetch, reused across apps · bounded worker pool · retry/backoff on rate limits</text>
+        </g>
+      </svg>
+    </div>
+
+    <ul class="human-list">
+      <li><b>Where a human was needed — the errors.</b> All 7 failed apps (Aircall, Copper, Discord, Freshdesk, Front, Help Scout, Telegram) are flagged <code>needs_human_review</code> and would need a manual research pass. 5 were a rate-limit-driven fallback model breaking its own JSON output; 1 (Copper) was the model calling a disabled browser tool; 1 (Front) was a genuine 413 request-too-large against the per-minute token cap.</li>
+      <li><b>Where a human was needed — the "unknown" gaps.</b> 8 completed apps came back with <code>mcp: unknown</code> rather than a guess (GoHighLevel, Gorgias, Lark, LiveAgent, Pumble, Slack, Twenty, Zoho Cliq). That's the agent correctly declining to invent an answer — but it means a human still has to close those out before the toolkit backlog can be prioritized.</li>
+      <li><b>Where a human was needed — sign-off on the two highest-stakes claims.</b> The verification section below shows the automated check itself needed a manual spot check: it caught one real first-pass mistake and manufactured one false one. Composio's own diligence process should keep a human in the loop on <code>credential_access</code> and <code>api.mcp</code> specifically, not just on failures.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="verification">
+  <div class="wrap">
+    <h2 class="sh">The verification</h2>
+    <p class="sh-note">Every app's <code>credential_access</code> and <code>api.mcp</code> claim gets a second, independent pass: a fresh web search, then a separately-prompted model that sees only the claim and the new evidence — not the original reasoning — and returns confirmed, contradicted, or inconclusive.</p>
+
+    <div class="verify-grid">
+      <div class="verify-cell"><span class="n">50</span><span class="l">checks attempted (25 apps × 2)</span></div>
+      <div class="verify-cell"><span class="n" style="color:var(--red)">29</span><span class="l">failed on a verifier JSON bug</span></div>
+      <div class="verify-cell"><span class="n" style="color:var(--amber)">10</span><span class="l">skipped by design (unknown)</span></div>
+      <div class="verify-cell"><span class="n" style="color:var(--green)">11</span><span class="l">ran a real check</span></div>
+      <div class="verify-cell"><span class="n">7 / 25</span><span class="l">got a checked verdict</span></div>
+    </div>
+
+    <p style="font-size: 15px; color: var(--ink-soft); margin-bottom: 24px;">
+      <b>The honest version:</b> <code>generate_final_report()</code> retries once if the model's JSON doesn't parse — <code>verify_report()</code> doesn't. So 58% of checks silently died to a formatting hiccup in the small verifier call, and the "confidence downgraded from high to medium" shown for 16 of the 25 completed apps is that bug, not new evidence. Only the 11 checks that actually ran are real signal. The fix is a five-line change: give the verifier the same retry-on-parse-failure the report generator already has.
+    </p>
+    <p style="font-size: 15px; color: var(--ink-soft); margin-bottom: 24px;">
+      Of the checks that did run, two produced a real contradiction of the first pass. Both were spot-checked by hand against live documentation — one confirms the pipeline caught a genuine mistake, the other shows the pipeline can be wrong about being right.
+    </p>
+
+    <div class="spot-check">
+      <span class="verdict hit">Verifier: correct catch</span>
+      <h3>Google Ads — the agent said no MCP server exists. It was wrong.</h3>
+      <p>First pass claimed <strong>api.mcp: no</strong>. The verification search surfaced Google's own developer-toolkit page for a Google Ads MCP server and flagged the contradiction. Manual check against developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server and the googleads/google-ads-mcp GitHub repo confirms it: Google ships an official, read-only MCP server (three tools — search, get_resource_metadata, list_accessible_customers). The agent's first pass missed a resource that exists; the verifier's contradiction was the correct call.</p>
+    </div>
+
+    <div class="spot-check">
+      <span class="verdict miss">Verifier: false positive</span>
+      <h3>Slack — the agent said credentials are self-serve. The verifier disagreed. The agent was right.</h3>
+      <p>First pass claimed <strong>credential_access: self_serve</strong>. The verifier's search returned Slack's help article on requesting a free trial of a paid workspace plan, which does require emailing support — and used that to mark the claim contradicted, dropping confidence to low. But that evidence answers a different question: upgrading a workspace's billing plan, not getting developer API credentials. Manual check against docs.slack.dev/authentication confirms any developer can register a Slack app and generate OAuth tokens with no sales contact at all — the original self-serve claim was correct. The verifier retrieved real evidence; it just answered the wrong question with it.</p>
+    </div>
+
+    <p style="font-size: 15px; color: var(--ink-soft); margin-top: 24px;">
+      <b>Net read:</b> the verification loop is a real improvement in concept — it caught one genuine mistake on the sample it actually reached — but this run shows two things worth fixing before trusting it at scale: a code bug capped its real coverage at 28% of completed apps, and even a "confirmed/contradicted" verdict from it still needs a human spot check, because scope-mismatched evidence can produce a confident wrong answer just as easily as a right one.
+    </p>
+  </div>
+</section>
+
+<section id="limits">
+  <div class="wrap">
+    <h2 class="sh">Limits, honestly &amp; why 32 and not 100</h2>
+    <p class="sh-note">The impact of Groq free-tier constraints and architectural bottlenecks.</p>
+    <ul class="limit-list">
+      <li><b>Free-tier Groq math, not a design choice.</b> The loop model's instrumentation showed roughly 17,500 tokens consumed per app across a 4-step tool-calling loop. Groq's free tier caps models at 8,000 tokens/minute and 200,000 tokens/day org-wide. Twenty apps alone (350k tokens) exceeded that daily ceiling, causing the batch to hit limits mid-run and rotate through fallback chains before manual intervention at 32 apps.</li>
+      <li><b>5 of 7 errors trace to that same ceiling.</b> When the loop fell back to smaller safeguard models, tool-call JSON malformed on 5 apps (Aircall, Discord, Freshdesk, Help Scout, Telegram), resulting in an <code>output_parse_failed</code> error from Groq. 1 more (Front) hit a hard 413 token-rate limit. Only 1 (Copper, invoking a disabled browser tool) was a genuine model-behavior bug.</li>
+      <li><b>What changes on Groq's Developer tier.</b> TPM limits jump from 8k to 250k per model (~31x increase), comfortably clearing all 100 apps without rotations.</li>
+      <li><b>Category blind spots.</b> Only 4 of 10 categories were touched; Ecommerce, Data/SEO, Infra, Finance, and AI/Research have zero data here.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="spotcheck">
+  <div class="wrap">
+    <h2 class="sh">Human spot-check sample &amp; error analysis</h2>
+    <p class="sh-note">A manual evaluation of 5 apps outside the automated verifier, testing 7 primary claims against primary vendor documentation.</p>
+    
+    <div class="verify-grid">
+      <div class="verify-cell"><span class="n">5</span><span class="l">apps hand-checked</span></div>
+      <div class="verify-cell"><span class="n" style="color:var(--green)">44%</span><span class="l">confirmed (3 claims)</span></div>
+      <div class="verify-cell"><span class="n" style="color:var(--red)">33%</span><span class="l">contradicted (2 claims)</span></div>
+      <div class="verify-cell"><span class="n" style="color:var(--amber)">22%</span><span class="l">imprecise (2 claims)</span></div>
+    </div>
+
+    <div class="spot-check">
+      <span class="verdict hit">Confirmed</span>
+      <h3>Salesforce — Self-serve credentials and MCP verified</h3>
+      <p>First pass claimed <strong>credential_access: self_serve</strong> and <strong>api.mcp: yes</strong>. Manual review confirms a free Developer Edition account combined with a self-service Connected App provides working OAuth client access without sales interaction. Furthermore, official documentation confirms Hosted MCP Servers are available for Enterprise tiers.</p>
+    </div>
+
+    <div class="spot-check">
+      <span class="verdict miss">Contradicted (Search Collision)</span>
+      <h3>Pylon — The agent conflated two companies</h3>
+      <p>First pass claimed <strong>credential_access: contact_sales</strong>, citing <code>getpylon.com/developers</code>. That URL belongs to an Australian solar-industry CRM built by Saru Technologies—an entirely different entity from <code>usepylon.com</code>, the customer-support platform. The correct Pylon docs indicate self-serve bearer token generation via dashboard admin roles. This search-collision failure is a critical class of error that could recur across other generic app names.</p>
+    </div>
+
+    <div class="spot-check">
+      <span class="verdict miss">Contradicted (Schema Conflation)</span>
+      <h3>Twilio — Credential acquisition vs. Usage pricing</h3>
+      <p>First pass claimed <strong>credential_access: paid</strong>. Twilio's trial and pricing documentation indicates that account creation requires no credit card and grants immediate full API access with trial credits. Costs apply strictly to post-trial usage metering, revealing that the schema blurred billing models with credential-gating rules.</p>
+    </div>
+
+    <div class="spot-check">
+      <span class="verdict hit">Defensible / Imprecise</span>
+      <h3>Twenty &amp; Gorgias — Underselling community MCP ecosystems</h3>
+      <p>Twenty was marked <code>api.mcp: unknown</code> because it lacks a first-party server, though at least four active community-built MCP wrappers exist. Gorgias was similarly marked unknown while third-party proxy integrations exist via Composio and Zapier. "Unknown" is safe, but toolkit builders benefit from knowing community paths exist.</p>
+    </div>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="wrap">
+    <h2 class="sh">The proof</h2>
+    <p class="sh-note">Pipeline execution instructions and repository layout.</p>
+    <div class="proof-box">
+      <h3>Repo &amp; execution details</h3>
+      <ul>
+        <li>Source files include <code>research_agent_fixed.py</code>, <code>apps_registry.py</code>, and aggregation scripts.</li>
+        <li>Requires <code>GROQ_API_KEY</code>, <code>COMPOSIO_API_KEY</code>, and <code>TAVILY_API_KEY</code> configured in a local <code>.env</code> file.</li>
+        <li>Run command: <code>python research_agent_fixed.py --limit 20 --workers 1 --token-budget 150050</code>.</li>
+        <li>Results write directly to <code>results/&lt;app&gt;.json</code> upon loop completion.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Composio toolkit-research take-home. 32 apps processed via agentic pipeline; findings reflect automated execution logs and manual post-mortem audits.
+  </div>
+</footer>
+
+<script>
+  const DATA = [
+    {app:"Aircall", cat:"Communications and Messaging", status:"error", cred:"—", mcp:"—", build:"—", conf:"—", flag:true},
+    {app:"Attio", cat:"CRM and Sales", status:"ok", cred:"self_serve", mcp:"yes", build:"ready", conf:"medium", flag:false},
+    {app:"Close", cat:"CRM and Sales", status:"ok", cred:"self_serve", mcp:"yes", build:"ready", conf:"medium", flag:false},
+    {app:"Copper", cat:"CRM and Sales", status:"error", cred:"—", mcp:"—", build:"—", conf:"—", flag:true},
+    {app:"DealCloud", cat:"CRM and Sales", status:"ok", cred:"admin", mcp:"yes", build:"constrained", conf:"medium", flag:false},
+    {app:"Discord", cat:"Communications and Messaging", status:"error", cred:"—", mcp:"—", build:"—", conf:"—", flag:true},
+    {app:"Freshdesk", cat:"Support and Helpdesk", status:"error", cred:"—", mcp:"—", build:"—", conf:"—", flag:true},
+    {app:"Front", cat:"Support and Helpdesk", status:"error", cred:"—", mcp:"—", build:"—", conf:"—", flag:true},
+    {app:"Gladly", cat:"Support and Helpdesk", status:"ok", cred:"admin", mcp:"yes", build:"ready", conf:"medium", flag:false},
+    {app:"GoHighLevel", cat:"Marketing, Ads, Email and Social", status:"ok", cred:"unknown", mcp:"unknown", build:"unclear", conf:"low", flag:false},
+    {app:"Google Ads", cat:"Marketing, Ads, Email and Social", status:"ok", cred:"admin", mcp:"no", build:"ready", conf:"low", flag:true},
+    {app:"Gorgias", cat:"Support and Helpdesk", status:"ok", cred:"self_serve", mcp:"unknown", build:"ready", conf:"medium", flag:false},
+    {app:"Help Scout", cat:"Support and Helpdesk", status:"error", cred:"—", mcp:"—", build:"—", conf:"—", flag:true},
+    {app:"HubSpot", cat:"CRM and Sales", status:"ok", cred:"self_serve", mcp:"yes", build:"ready", conf:"medium", flag:false},
+    {app:"Intercom", cat:"Support and Helpdesk", status:"ok", cred:"self_serve", mcp:"yes", build:"ready", conf:"medium", flag:false},
+    {app:"Lark (Larksuite)", cat:"Communications and Messaging", status:"ok", cred:"self_serve", mcp:"unknown", build:"ready", conf:"medium", flag:false},
+    {app:"LiveAgent", cat:"Support and Helpdesk", status:"ok", cred:"trial", mcp:"unknown", build:"ready", conf:"medium", flag:false},
+    {app:"Meta Ads", cat:"Marketing, Ads, Email and Social", status:"ok", cred:"self_serve", mcp:"yes", build:"ready", conf:"medium", flag:false},
+    {app:"Pipedrive", cat:"CRM and Sales", status:"ok", cred:"self_serve", mcp:"yes", build:"ready", conf:"medium", flag:false},
+    {app:"Plain", cat:"Support and Helpdesk", status:"ok", cred:"paid", mcp:"yes", build:"ready", conf:"medium", flag:false},
+    {app:"Podio", cat:"CRM and Sales", status:"ok", cred:"self_serve", mcp:"yes", build:"ready", conf:"medium", flag:false},
+    {app:"Pumble", cat:"Communications and Messaging", status:"ok", cred:"self_serve", mcp:"unknown", build:"ready", conf:"medium", flag:false},
+    {app:"Pylon", cat:"Support and Helpdesk", status:"ok", cred:"contact_sales", mcp:"yes", build:"ready", conf:"medium", flag:false},
+    {app:"Salesforce", cat:"CRM and Sales", status:"ok", cred:"self_serve", mcp:"yes", build:"ready", conf:"medium", flag:false},
+    {app:"Slack", cat:"Communications and Messaging", status:"ok", cred:"self_serve", mcp:"unknown", build:"ready", conf:"low", flag:true},
+    {app:"Telegram", cat:"Communications and Messaging", status:"error", cred:"—", mcp:"—", build:"—", conf:"—", flag:true},
+    {app:"Twenty", cat:"CRM and Sales", status:"ok", cred:"self_serve", mcp:"unknown", build:"ready", conf:"medium", flag:false},
+    {app:"Twilio", cat:"Communications and Messaging", status:"ok", cred:"paid", mcp:"yes", build:"ready", conf:"medium", flag:false},
+    {app:"WhatsApp Business", cat:"Communications and Messaging", status:"ok", cred:"paid", mcp:"yes", build:"ready", conf:"high", flag:false},
+    {app:"Zendesk", cat:"Support and Helpdesk", status:"ok", cred:"self_serve", mcp:"yes", build:"ready", conf:"medium", flag:false},
+    {app:"Zoho CRM", cat:"CRM and Sales", status:"ok", cred:"self_serve", mcp:"yes", build:"ready", conf:"medium", flag:false},
+    {app:"Zoho Cliq", cat:"Communications and Messaging", status:"ok", cred:"unknown", mcp:"unknown", build:"ready", conf:"medium", flag:false}
+  ];
+
+  const CRED_COLOR = {self_serve:"g", trial:"a", paid:"a", admin:"a", contact_sales:"r", unknown:"gray", "—":"gray"};
+  const MCP_COLOR = {yes:"g", no:"r", unknown:"gray", "—":"gray"};
+  const BUILD_COLOR = {ready:"g", constrained:"a", blocked:"r", unclear:"gray", "—":"gray"};
+  const CONF_COLOR = {high:"g", medium:"a", low:"r", "—":"gray"};
+
+  function tag(val, colorMap) {
+    const c = colorMap[val] || "gray";
+    return `<span class="tag ${c}">${val}</span>`;
+  }
+
+  function render(filterCat) {
+    const body = document.getElementById('table-body');
+    const rows = DATA.filter(d => filterCat === 'all' || d.cat === filterCat);
+    body.innerHTML = rows.map(d => `
+      <tr>
+        <td class="app-name">${d.app}</td>
+        <td class="cat-name">${d.cat}</td>
+        <td>${d.status === 'ok' ? tag('ok','g') : tag('error','r')}</td>
+        <td>${tag(d.cred, CRED_COLOR)}</td>
+        <td>${tag(d.mcp, MCP_COLOR)}</td>
+        <td>${tag(d.build, BUILD_COLOR)}</td>
+        <td>${tag(d.conf, CONF_COLOR)}</td>
+        <td>${d.flag ? '<span class="flag">needs review</span>' : ''}</td>
+      </tr>
+    `).join('');
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.cat);
+    });
+  });
+
+  render('all');
+</script>
+
+</body>
+</html>

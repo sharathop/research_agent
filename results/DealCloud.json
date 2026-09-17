@@ -1,0 +1,68 @@
+{
+  "app": "DealCloud",
+  "category": "CRM and Sales",
+  "status": "ok",
+  "report": {
+    "app": "DealCloud",
+    "category": "CRM and Sales",
+    "description": "DealCloud is a CRM and deal‑management platform for principal investing and M&A advisory professionals. It offers a RESTful API that requires user‑specific credentials (API keys or OAuth tokens) and provides access to functional endpoints, with a new Model Context Protocol (MCP) server for read‑only data access in preview.",
+    "auth_methods": [
+      "API key",
+      "OAuth"
+    ],
+    "credential_access": "admin",
+    "api": {
+      "types": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "yes"
+    },
+    "buildability": "constrained",
+    "main_blocker": "The MCP server is only available as a client preview starting July 2026, requires the DealCloud with Celeste license, and currently provides read‑only access, limiting full integration capabilities.",
+    "evidence": [
+      {
+        "claim": "API requires user‑specific credentials and can use a dedicated service account",
+        "url": "https://api.docs.dealcloud.com/guides/making_requests_on_behalf_of_users",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "API keys are used for authentication and must be treated like passwords",
+        "url": "https://api.docs.dealcloud.com/docs/apikeys",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "DealCloud MCP Server announced as a client preview starting July 2026",
+        "url": "https://api.docs.dealcloud.com/mcp",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "MCP preview requires the DealCloud with Celeste license and provides read‑only access",
+        "url": "https://www.usecarly.com/blog/chatgpt-dealcloud-integration",
+        "source_type": "blog"
+      },
+      {
+        "claim": "Developer portal lists API documentation and references REST APIs",
+        "url": "https://api.docs.dealcloud.com",
+        "source_type": "documentation"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

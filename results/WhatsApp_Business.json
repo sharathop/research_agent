@@ -1,0 +1,103 @@
+{
+  "app": "WhatsApp Business",
+  "category": "Communications and Messaging",
+  "status": "ok",
+  "report": {
+    "app": "WhatsApp Business",
+    "category": "Communications and Messaging",
+    "description": "WhatsApp Business Platform enables businesses to communicate with customers using WhatsApp through APIs, supporting messaging, templates, phone numbers, and business account management.",
+    "auth_methods": [
+      "OAuth 2.0"
+    ],
+    "credential_access": "paid",
+    "api": {
+      "types": [
+        "messaging",
+        "business messaging",
+        "template"
+      ],
+      "breadth": "moderate",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "requires Meta for Developers account approval",
+    "evidence": [
+      {
+        "claim": "WhatsApp Business authentication uses OAuth 2.0 Authorization.",
+        "url": "https://docs.uipath.com/integration-service/automation-cloud/latest/user-guide/uipath-meta-whatsapp-authentication",
+        "source_type": "web"
+      },
+      {
+        "claim": "WhatsApp Business Platform is a managed cloud service provided by Meta.",
+        "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/overview",
+        "source_type": "web"
+      },
+      {
+        "claim": "WhatsApp Business API supports messaging, template, and phone number endpoints.",
+        "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/about-the-platform",
+        "source_type": "web"
+      },
+      {
+        "claim": "Integration Service offers ready-to-use WhatsApp Business connectors.",
+        "url": "https://docs.uipath.com/integration-service/automation-cloud/latest/user-guide/uipath-meta-whatsapp-authentication",
+        "source_type": "web"
+      },
+      {
+        "claim": "WhatsApp Business Platform requires a Meta developer app and is a paid service.",
+        "url": "https://whatsappbusiness.com/products/business-platform",
+        "source_type": "web"
+      }
+    ],
+    "confidence": "high",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "high",
+      "checks": {
+        "credential_access": {
+          "verdict": "confirmed",
+          "reason": "Snippets list paid plans for WhatsApp Business API.",
+          "_evidence": [
+            {
+              "title": "Is the WhatsApp Business API Free? Here's What You Need to Know – Intelli Blog",
+              "url": "https://www.intelliconcierge.com/blog/is-the-whatsapp-business-api-free-heres-what-you-need-to-know",
+              "snippet": "Intelli's Starter plan is $35/month for up to 2,000 contacts. The Growth plan scales with volume. Enterprise plans are custom-priced for governments, NGOs, and large organizations. There is a 7-day free trial with no credit card required.\n\nCritically"
+            },
+            {
+              "title": "Get WhatsApp Business API for FREE",
+              "url": "https://aisensy.com/whatsapp-business-api",
+              "snippet": "| WhatsApp Business API  Suited for Growing Businesses & Enterprises    $150  per seat per year Apply For FREE | WhatsApp Business App  For Small Businesses    $450  per seat per year Get Started |\n --- |\n| WhatsApp Broadcasting Limit | UNLIMITED Use"
+            },
+            {
+              "title": "Is the WhatsApp Business API Free? Honest 2026 Answer",
+              "url": "https://wexio.io/blog/free-whatsapp-business-api",
+              "snippet": "Disclosure: I work on Wexio, and I've kept its WhatsApp status honest here - it's rolling out, not live for everyone yet. The rest of the list is researched independently.\n\nTwilio's WhatsApp Sandbox - free trial of WhatsApp via Twilio's number. Limit"
+            }
+          ]
+        },
+        "api_mcp": {
+          "verdict": "confirmed",
+          "reason": "Snippets describe existing MCP servers for WhatsApp Business.",
+          "_evidence": [
+            {
+              "title": "What is a WhatsApp MCP Server? Full Guide for 2026",
+              "url": "https://www.wati.io/en/blog/whatsapp-mcp-server",
+              "snippet": "MCP (Model Context Protocol) is an open standard that lets AI assistants like Claude connect to external platforms and take real actions inside them, not just generate text about them.\n A WhatsApp MCP server applies that standard to WhatsApp Business"
+            },
+            {
+              "title": "WhatsApp Business MCP Server | MCP S... · LobeHub",
+              "url": "https://lobehub.com/mcp/asherclement-whatsapp-mcp-server",
+              "snippet": "# WhatsApp Business MCP Server\n\nAn MCP (Model Context Protocol) server that connects AI agents to the WhatsApp Business Cloud API. Send messages, manage contacts, handle customer support — all through AI.\n\n## Features\n\n### Messaging (7 tools) [...] U"
+            },
+            {
+              "title": "Show HN: WhatsApp MCP Server | Hacker News",
+              "url": "https://news.ycombinator.com/item?id=43532967",
+              "snippet": "|  | | Hi HN – I built an open-source, self-hosted Model Context Protocol (MCP) server for WhatsApp:  It connects to your personal WhatsApp account via the WhatsApp Web multi-device API (using whatsmeow from the Beeper team), and doesn't rely on thir"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

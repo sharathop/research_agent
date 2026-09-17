@@ -1,0 +1,70 @@
+{
+  "app": "HubSpot",
+  "category": "CRM and Sales",
+  "status": "ok",
+  "report": {
+    "app": "HubSpot",
+    "category": "CRM and Sales",
+    "description": "HubSpot offers a comprehensive set of REST APIs for managing CRM data such as contacts, properties, and search, enabling read and write operations across the platform.",
+    "auth_methods": [
+      "OAuth",
+      "Private App Token"
+    ],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "CRM",
+        "Search",
+        "Properties"
+      ],
+      "breadth": "broad",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "",
+    "evidence": [
+      {
+        "claim": "Private apps can be created by users to obtain access tokens for API calls.",
+        "url": "https://www.youtube.com/watch?v=tvjnPtETEZI",
+        "source_type": "video"
+      },
+      {
+        "claim": "HubSpot provides a Model Context Protocol (MCP) server for AI integration.",
+        "url": "https://developers.hubspot.com/ai-tools/mcp",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Developers can set up the MCP server via the HubSpot CLI, enabling AI assistants to interact with HubSpot data.",
+        "url": "https://developers.hubspot.com/docs/developer-tooling/local-development/developer-mcp/setup",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "HubSpot supports OAuth Bearer token authentication for API access.",
+        "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "HubSpot offers extensive CRM APIs covering contacts, companies, deals, and more.",
+        "url": "https://generect.com/blog/hubspot-api",
+        "source_type": "blog"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

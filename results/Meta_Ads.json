@@ -1,0 +1,63 @@
+{
+  "app": "Meta Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "status": "ok",
+  "report": {
+    "app": "Meta Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "description": "",
+    "auth_methods": [
+      "OAuth 2.0"
+    ],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "Graph API",
+        "Marketing API"
+      ],
+      "breadth": "broad",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "none",
+    "evidence": [
+      {
+        "claim": "The Meta Ads API can be accessed via OAuth 2.0 and supports no-code integration, indicating self‑serve credential access.",
+        "url": "https://windsor.ai/guide-to-facebook-meta-ads-api",
+        "source_type": "web"
+      },
+      {
+        "claim": "The API requires app‑level permissions such as ads_management and ads_read, confirming self‑serve access and broad API types.",
+        "url": "https://admanage.ai/blog/meta-ads-api",
+        "source_type": "web"
+      },
+      {
+        "claim": "Meta’s Marketing API is a collection of Graph API endpoints for advertising across Meta platforms, supporting a wide breadth of features.",
+        "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api",
+        "source_type": "web"
+      },
+      {
+        "claim": "Third‑party platforms typically use per‑seat or flat monthly fees, indicating that credential access is available via self‑serve app registration.",
+        "url": "https://www.adstellar.ai/blog/meta-ads-api-integration-pricing",
+        "source_type": "web"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

@@ -1,0 +1,67 @@
+{
+  "app": "LiveAgent",
+  "category": "Support and Helpdesk",
+  "status": "ok",
+  "report": {
+    "app": "LiveAgent",
+    "category": "Support and Helpdesk",
+    "description": "LiveAgent is a cloud‑based help desk and live chat solution that provides a REST API for integrating ticketing, chat, and other customer support functions.",
+    "auth_methods": [
+      "API key"
+    ],
+    "credential_access": "trial",
+    "api": {
+      "types": [
+        "REST"
+      ],
+      "breadth": "moderate",
+      "mcp": "unknown"
+    },
+    "buildability": "ready",
+    "main_blocker": "",
+    "evidence": [
+      {
+        "claim": "The LiveAgent API uses API key-based authentication for all endpoints.",
+        "url": "https://support.liveagent.com/741982-API-key",
+        "source_type": "website"
+      },
+      {
+        "claim": "REST API documentation is available for both v1 and v3, showing endpoints and usage guidelines.",
+        "url": "https://support.liveagent.com/802463-REST-API",
+        "source_type": "website"
+      },
+      {
+        "claim": "Truto integration demonstrates that third‑party apps can securely obtain LiveAgent API keys via a managed auth flow.",
+        "url": "https://truto.one/integrations/detail/liveagent",
+        "source_type": "website"
+      },
+      {
+        "claim": "API access is included in all LiveAgent subscription plans and is available during the 30‑day free trial.",
+        "url": "https://www.liveagent.com/pricing",
+        "source_type": "website"
+      },
+      {
+        "claim": "The LiveAgent v3 documentation outlines the REST API endpoints and authentication details.",
+        "url": "https://support.liveagent.com/911737-API-v3",
+        "source_type": "website"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "original claim was already unknown"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

@@ -1,0 +1,67 @@
+{
+  "app": "Zoho CRM",
+  "category": "CRM and Sales",
+  "status": "ok",
+  "report": {
+    "app": "Zoho CRM",
+    "category": "CRM and Sales",
+    "description": "Zoho CRM provides a comprehensive set of RESTful APIs (Core, Bulk, and SDKs) for CRUD operations, searching, and module management, with OAuth2 authentication and optional Model Context Protocol (MCP) integration for AI agents.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "none",
+    "evidence": [
+      {
+        "claim": "OAuth2 credentials can be created by users via a self‑serve flow",
+        "url": "https://composio.dev/auth/zoho",
+        "source_type": "web"
+      },
+      {
+        "claim": "Zoho CRM offers extensive REST APIs for CRUD, search, bulk operations, and SDKs",
+        "url": "https://www.zoho.com/crm/developer/docs",
+        "source_type": "web"
+      },
+      {
+        "claim": "Zoho provides a Model Context Protocol (MCP) server for AI integration",
+        "url": "https://www.zoho.com/mcp",
+        "source_type": "web"
+      },
+      {
+        "claim": "Developer documentation and tools are publicly available, indicating ready‑to‑build integration",
+        "url": "https://www.zohocrm.dev",
+        "source_type": "web"
+      },
+      {
+        "claim": "API sandbox and usage dashboard are available for testing and monitoring",
+        "url": "https://pipeline.zoominfo.com/sales/zoho-crm-api",
+        "source_type": "web"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

@@ -1,0 +1,67 @@
+{
+  "app": "Pylon",
+  "category": "Support and Helpdesk",
+  "status": "ok",
+  "report": {
+    "app": "Pylon",
+    "category": "Support and Helpdesk",
+    "description": "A support and helpdesk platform offering ticketing, knowledge base, and AI-powered agent features with programmatic API access.",
+    "auth_methods": [
+      "bearer_token"
+    ],
+    "credential_access": "contact_sales",
+    "api": {
+      "types": [
+        "rest"
+      ],
+      "breadth": "broad",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "API key access requires contacting support staff for approval",
+    "evidence": [
+      {
+        "claim": "Pylon API uses Bearer token authentication.",
+        "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "Obtaining API credentials requires contacting support staff.",
+        "url": "https://getpylon.com/developers",
+        "source_type": "developer hub"
+      },
+      {
+        "claim": "Pylon’s API provides broad access with 50+ MCP‑ready tools.",
+        "url": "https://truto.one/integrations/detail/pylon",
+        "source_type": "integration page"
+      },
+      {
+        "claim": "Pylon’s API documentation is comprehensive and ready for developers.",
+        "url": "https://docs.usepylon.com/pylon-docs/developer/api",
+        "source_type": "documentation"
+      },
+      {
+        "claim": "API supports programmatic read and write of data across knowledge base, ticketing, and other modules.",
+        "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference/knowledge-base",
+        "source_type": "API reference"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Expecting value: line 1 column 1 (char 0)"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}

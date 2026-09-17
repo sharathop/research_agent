@@ -1,0 +1,69 @@
+{
+  "app": "Podio",
+  "category": "CRM and Sales",
+  "status": "ok",
+  "report": {
+    "app": "Podio",
+    "category": "CRM and Sales",
+    "description": "Podio is a collaborative work platform that provides customizable workspaces, apps, and API access for managing items, tasks, and user data.",
+    "auth_methods": [
+      "OAuth2",
+      "App Token",
+      "API Key"
+    ],
+    "credential_access": "self_serve",
+    "api": {
+      "types": [
+        "REST"
+      ],
+      "breadth": "broad",
+      "mcp": "yes"
+    },
+    "buildability": "ready",
+    "main_blocker": "none",
+    "evidence": [
+      {
+        "claim": "Podio uses OAuth2 and app‑token flows for authentication, and developers can obtain API keys via the developer portal.",
+        "url": "https://developers.podio.com/authentication",
+        "source_type": "webpage"
+      },
+      {
+        "claim": "App authentication flow documentation shows how to programmatically acquire app tokens.",
+        "url": "https://developers.podio.com/authentication/app_auth",
+        "source_type": "webpage"
+      },
+      {
+        "claim": "Free plan provides API access (1,000 calls per day) without contacting sales, indicating self‑serve credential acquisition.",
+        "url": "https://findpmsoftware.com/products/podio/pricing",
+        "source_type": "webpage"
+      },
+      {
+        "claim": "Podio MCP Server enables Model Context Protocol integration for AI assistants.",
+        "url": "https://www.progress.com/podio/documentation/using-podio/podio-mcp-server",
+        "source_type": "webpage"
+      },
+      {
+        "claim": "Comprehensive API reference covering items, applications, users, and more demonstrates broad REST API coverage.",
+        "url": "https://developers.podio.com/doc/items",
+        "source_type": "webpage"
+      }
+    ],
+    "confidence": "medium",
+    "verification": {
+      "first_pass_confidence": "high",
+      "after_verification_confidence": "medium",
+      "checks": {
+        "credential_access": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Unterminated string starting at: line 8 column 15 (char 231)"
+        },
+        "api_mcp": {
+          "verdict": "inconclusive",
+          "reason": "verifier call failed: Unterminated string starting at: line 8 column 15 (char 231)"
+        }
+      }
+    }
+  },
+  "needs_human_review": false,
+  "error": null
+}
